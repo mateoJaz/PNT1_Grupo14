@@ -1,0 +1,117 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ma_no\\source\\repos\\MVCVeterinaria\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E759D66A-049A-4DB3-B8E7-49DC1C823593}|MVCVeterinaria\\MVCVeterinaria.csproj|c:\\users\\ma_no\\source\\repos\\mvcveterinaria\\mvcveterinaria\\mvcveterinaria.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{E759D66A-049A-4DB3-B8E7-49DC1C823593}|MVCVeterinaria\\MVCVeterinaria.csproj|solutionrelative:mvcveterinaria\\mvcveterinaria.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E759D66A-049A-4DB3-B8E7-49DC1C823593}|MVCVeterinaria\\MVCVeterinaria.csproj|c:\\users\\ma_no\\source\\repos\\mvcveterinaria\\mvcveterinaria\\mvcveterinaria.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{E759D66A-049A-4DB3-B8E7-49DC1C823593}|MVCVeterinaria\\MVCVeterinaria.csproj|solutionrelative:mvcveterinaria\\mvcveterinaria.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E759D66A-049A-4DB3-B8E7-49DC1C823593}|MVCVeterinaria\\MVCVeterinaria.csproj|c:\\users\\ma_no\\source\\repos\\mvcveterinaria\\mvcveterinaria\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E759D66A-049A-4DB3-B8E7-49DC1C823593}|MVCVeterinaria\\MVCVeterinaria.csproj|solutionrelative:mvcveterinaria\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E759D66A-049A-4DB3-B8E7-49DC1C823593}|MVCVeterinaria\\MVCVeterinaria.csproj|c:\\users\\ma_no\\source\\repos\\mvcveterinaria\\mvcveterinaria\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{E759D66A-049A-4DB3-B8E7-49DC1C823593}|MVCVeterinaria\\MVCVeterinaria.csproj|solutionrelative:mvcveterinaria\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E759D66A-049A-4DB3-B8E7-49DC1C823593}|MVCVeterinaria\\MVCVeterinaria.csproj|c:\\users\\ma_no\\source\\repos\\mvcveterinaria\\mvcveterinaria\\context\\veterinariadatabasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E759D66A-049A-4DB3-B8E7-49DC1C823593}|MVCVeterinaria\\MVCVeterinaria.csproj|solutionrelative:mvcveterinaria\\context\\veterinariadatabasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E759D66A-049A-4DB3-B8E7-49DC1C823593}|MVCVeterinaria\\MVCVeterinaria.csproj|c:\\users\\ma_no\\source\\repos\\mvcveterinaria\\mvcveterinaria\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E759D66A-049A-4DB3-B8E7-49DC1C823593}|MVCVeterinaria\\MVCVeterinaria.csproj|solutionrelative:mvcveterinaria\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MVCVeterinaria",
+              "DocumentMoniker": "C:\\Users\\ma_no\\source\\repos\\MVCVeterinaria\\MVCVeterinaria\\MVCVeterinaria.csproj",
+              "RelativeDocumentMoniker": "MVCVeterinaria\\MVCVeterinaria.csproj",
+              "ToolTip": "C:\\Users\\ma_no\\source\\repos\\MVCVeterinaria\\MVCVeterinaria\\MVCVeterinaria.csproj",
+              "RelativeToolTip": "MVCVeterinaria\\MVCVeterinaria.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-12T23:06:28.777Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ma_no\\source\\repos\\MVCVeterinaria\\MVCVeterinaria\\Program.cs",
+              "RelativeDocumentMoniker": "MVCVeterinaria\\Program.cs",
+              "ToolTip": "C:\\Users\\ma_no\\source\\repos\\MVCVeterinaria\\MVCVeterinaria\\Program.cs",
+              "RelativeToolTip": "MVCVeterinaria\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T22:56:26.6Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\ma_no\\source\\repos\\MVCVeterinaria\\MVCVeterinaria\\appsettings.json",
+              "RelativeDocumentMoniker": "MVCVeterinaria\\appsettings.json",
+              "ToolTip": "C:\\Users\\ma_no\\source\\repos\\MVCVeterinaria\\MVCVeterinaria\\appsettings.json",
+              "RelativeToolTip": "MVCVeterinaria\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-12T22:38:35.688Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "VeterinariaDatabaseContext.cs",
+              "DocumentMoniker": "C:\\Users\\ma_no\\source\\repos\\MVCVeterinaria\\MVCVeterinaria\\Context\\VeterinariaDatabaseContext.cs",
+              "RelativeDocumentMoniker": "MVCVeterinaria\\Context\\VeterinariaDatabaseContext.cs",
+              "ToolTip": "C:\\Users\\ma_no\\source\\repos\\MVCVeterinaria\\MVCVeterinaria\\Context\\VeterinariaDatabaseContext.cs",
+              "RelativeToolTip": "MVCVeterinaria\\Context\\VeterinariaDatabaseContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T22:36:23.715Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MVCVeterinaria.csproj",
+              "DocumentMoniker": "C:\\Users\\ma_no\\source\\repos\\MVCVeterinaria\\MVCVeterinaria\\MVCVeterinaria.csproj",
+              "RelativeDocumentMoniker": "MVCVeterinaria\\MVCVeterinaria.csproj",
+              "ToolTip": "C:\\Users\\ma_no\\source\\repos\\MVCVeterinaria\\MVCVeterinaria\\MVCVeterinaria.csproj",
+              "RelativeToolTip": "MVCVeterinaria\\MVCVeterinaria.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-12T22:35:49.456Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Cliente.cs",
+              "DocumentMoniker": "C:\\Users\\ma_no\\source\\repos\\MVCVeterinaria\\MVCVeterinaria\\Models\\Cliente.cs",
+              "RelativeDocumentMoniker": "MVCVeterinaria\\Models\\Cliente.cs",
+              "ToolTip": "C:\\Users\\ma_no\\source\\repos\\MVCVeterinaria\\MVCVeterinaria\\Models\\Cliente.cs",
+              "RelativeToolTip": "MVCVeterinaria\\Models\\Cliente.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T22:34:24.584Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
