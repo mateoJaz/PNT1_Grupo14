@@ -14,6 +14,8 @@ namespace MVCVeterinaria.Migrations
                 name: "Clientes",
                 columns: table => new
                 {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     DNI = table.Column<int>(type: "int", nullable: false),
                     Nombre = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Apellido = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -23,7 +25,7 @@ namespace MVCVeterinaria.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Clientes", x => x.DNI);
+                    table.PrimaryKey("PK_Clientes", x => x.Id);
                 });
         }
 

@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\ma_no\\source\\repos\\MVCVeterinaria\\",
+  "WorkspaceRootPath": "C:\\Users\\ma_no\\OneDrive\\Desktop\\Materias 2do cuatri\\Taller de programaci\u00F3n\\GitHUB\\PNT1_Grupo14\\Proyecto Final\\MVCVeterinaria\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E759D66A-049A-4DB3-B8E7-49DC1C823593}|MVCVeterinaria\\MVCVeterinaria.csproj|c:\\users\\ma_no\\source\\repos\\mvcveterinaria\\mvcveterinaria\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E759D66A-049A-4DB3-B8E7-49DC1C823593}|MVCVeterinaria\\MVCVeterinaria.csproj|c:\\users\\ma_no\\onedrive\\desktop\\materias 2do cuatri\\taller de programaci\u00F3n\\github\\pnt1_grupo14\\proyecto final\\mvcveterinaria\\mvcveterinaria\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E759D66A-049A-4DB3-B8E7-49DC1C823593}|MVCVeterinaria\\MVCVeterinaria.csproj|solutionrelative:mvcveterinaria\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -20,11 +20,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Cliente.cs",
-              "DocumentMoniker": "C:\\Users\\ma_no\\source\\repos\\MVCVeterinaria\\MVCVeterinaria\\Models\\Cliente.cs",
+              "DocumentMoniker": "C:\\Users\\ma_no\\OneDrive\\Desktop\\Materias 2do cuatri\\Taller de programaci\u00F3n\\GitHUB\\PNT1_Grupo14\\Proyecto Final\\MVCVeterinaria\\MVCVeterinaria\\Models\\Cliente.cs",
               "RelativeDocumentMoniker": "MVCVeterinaria\\Models\\Cliente.cs",
-              "ToolTip": "C:\\Users\\ma_no\\source\\repos\\MVCVeterinaria\\MVCVeterinaria\\Models\\Cliente.cs",
+              "ToolTip": "C:\\Users\\ma_no\\OneDrive\\Desktop\\Materias 2do cuatri\\Taller de programaci\u00F3n\\GitHUB\\PNT1_Grupo14\\Proyecto Final\\MVCVeterinaria\\MVCVeterinaria\\Models\\Cliente.cs",
               "RelativeToolTip": "MVCVeterinaria\\Models\\Cliente.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-12T22:34:24.584Z",
               "EditorCaption": ""

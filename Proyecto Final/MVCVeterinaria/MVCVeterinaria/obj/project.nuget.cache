@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0si3kVsDynk=",
+  "dgSpecHash": "fT+x9p2Hu2w=",
   "success": true,
-  "projectFilePath": "C:\\Users\\ma_no\\source\\repos\\MVCVeterinaria\\MVCVeterinaria\\MVCVeterinaria.csproj",
+  "projectFilePath": "C:\\Users\\ma_no\\OneDrive\\Desktop\\Materias 2do cuatri\\Taller de programación\\GitHUB\\PNT1_Grupo14\\Proyecto Final\\MVCVeterinaria\\MVCVeterinaria\\MVCVeterinaria.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ma_no\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\ma_no\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

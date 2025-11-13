@@ -17,61 +17,141 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MVCVeterinaria
 build_property.RootNamespace = MVCVeterinaria
-build_property.ProjectDir = C:\Users\ma_no\source\repos\MVCVeterinaria\MVCVeterinaria\
+build_property.ProjectDir = C:\Users\ma_no\OneDrive\Desktop\Materias 2do cuatri\Taller de programación\GitHUB\PNT1_Grupo14\Proyecto Final\MVCVeterinaria\MVCVeterinaria\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\ma_no\source\repos\MVCVeterinaria\MVCVeterinaria
+build_property.MSBuildProjectDirectory = C:\Users\ma_no\OneDrive\Desktop\Materias 2do cuatri\Taller de programación\GitHUB\PNT1_Grupo14\Proyecto Final\MVCVeterinaria\MVCVeterinaria
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/ma_no/source/repos/MVCVeterinaria/MVCVeterinaria/Views/Cliente/Create.cshtml]
+[C:/Users/ma_no/OneDrive/Desktop/Materias 2do cuatri/Taller de programación/GitHUB/PNT1_Grupo14/Proyecto Final/MVCVeterinaria/MVCVeterinaria/Views/Cliente/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ma_no/source/repos/MVCVeterinaria/MVCVeterinaria/Views/Cliente/Delete.cshtml]
+[C:/Users/ma_no/OneDrive/Desktop/Materias 2do cuatri/Taller de programación/GitHUB/PNT1_Grupo14/Proyecto Final/MVCVeterinaria/MVCVeterinaria/Views/Cliente/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ma_no/source/repos/MVCVeterinaria/MVCVeterinaria/Views/Cliente/Details.cshtml]
+[C:/Users/ma_no/OneDrive/Desktop/Materias 2do cuatri/Taller de programación/GitHUB/PNT1_Grupo14/Proyecto Final/MVCVeterinaria/MVCVeterinaria/Views/Cliente/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ma_no/source/repos/MVCVeterinaria/MVCVeterinaria/Views/Cliente/Edit.cshtml]
+[C:/Users/ma_no/OneDrive/Desktop/Materias 2do cuatri/Taller de programación/GitHUB/PNT1_Grupo14/Proyecto Final/MVCVeterinaria/MVCVeterinaria/Views/Cliente/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ma_no/source/repos/MVCVeterinaria/MVCVeterinaria/Views/Cliente/Index.cshtml]
+[C:/Users/ma_no/OneDrive/Desktop/Materias 2do cuatri/Taller de programación/GitHUB/PNT1_Grupo14/Proyecto Final/MVCVeterinaria/MVCVeterinaria/Views/Cliente/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ma_no/source/repos/MVCVeterinaria/MVCVeterinaria/Views/Home/Index.cshtml]
+[C:/Users/ma_no/OneDrive/Desktop/Materias 2do cuatri/Taller de programación/GitHUB/PNT1_Grupo14/Proyecto Final/MVCVeterinaria/MVCVeterinaria/Views/Evento/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRvXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ma_no/OneDrive/Desktop/Materias 2do cuatri/Taller de programación/GitHUB/PNT1_Grupo14/Proyecto Final/MVCVeterinaria/MVCVeterinaria/Views/Evento/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRvXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ma_no/OneDrive/Desktop/Materias 2do cuatri/Taller de programación/GitHUB/PNT1_Grupo14/Proyecto Final/MVCVeterinaria/MVCVeterinaria/Views/Evento/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRvXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ma_no/OneDrive/Desktop/Materias 2do cuatri/Taller de programación/GitHUB/PNT1_Grupo14/Proyecto Final/MVCVeterinaria/MVCVeterinaria/Views/Evento/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRvXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ma_no/OneDrive/Desktop/Materias 2do cuatri/Taller de programación/GitHUB/PNT1_Grupo14/Proyecto Final/MVCVeterinaria/MVCVeterinaria/Views/Evento/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRvXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ma_no/OneDrive/Desktop/Materias 2do cuatri/Taller de programación/GitHUB/PNT1_Grupo14/Proyecto Final/MVCVeterinaria/MVCVeterinaria/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ma_no/source/repos/MVCVeterinaria/MVCVeterinaria/Views/Home/Privacy.cshtml]
+[C:/Users/ma_no/OneDrive/Desktop/Materias 2do cuatri/Taller de programación/GitHUB/PNT1_Grupo14/Proyecto Final/MVCVeterinaria/MVCVeterinaria/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ma_no/source/repos/MVCVeterinaria/MVCVeterinaria/Views/Shared/Error.cshtml]
+[C:/Users/ma_no/OneDrive/Desktop/Materias 2do cuatri/Taller de programación/GitHUB/PNT1_Grupo14/Proyecto Final/MVCVeterinaria/MVCVeterinaria/Views/Mascota/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzY290YVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ma_no/OneDrive/Desktop/Materias 2do cuatri/Taller de programación/GitHUB/PNT1_Grupo14/Proyecto Final/MVCVeterinaria/MVCVeterinaria/Views/Mascota/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzY290YVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ma_no/OneDrive/Desktop/Materias 2do cuatri/Taller de programación/GitHUB/PNT1_Grupo14/Proyecto Final/MVCVeterinaria/MVCVeterinaria/Views/Mascota/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzY290YVxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ma_no/OneDrive/Desktop/Materias 2do cuatri/Taller de programación/GitHUB/PNT1_Grupo14/Proyecto Final/MVCVeterinaria/MVCVeterinaria/Views/Mascota/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzY290YVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ma_no/OneDrive/Desktop/Materias 2do cuatri/Taller de programación/GitHUB/PNT1_Grupo14/Proyecto Final/MVCVeterinaria/MVCVeterinaria/Views/Mascota/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzY290YVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ma_no/OneDrive/Desktop/Materias 2do cuatri/Taller de programación/GitHUB/PNT1_Grupo14/Proyecto Final/MVCVeterinaria/MVCVeterinaria/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ma_no/source/repos/MVCVeterinaria/MVCVeterinaria/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/ma_no/OneDrive/Desktop/Materias 2do cuatri/Taller de programación/GitHUB/PNT1_Grupo14/Proyecto Final/MVCVeterinaria/MVCVeterinaria/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ma_no/source/repos/MVCVeterinaria/MVCVeterinaria/Views/_ViewImports.cshtml]
+[C:/Users/ma_no/OneDrive/Desktop/Materias 2do cuatri/Taller de programación/GitHUB/PNT1_Grupo14/Proyecto Final/MVCVeterinaria/MVCVeterinaria/Views/Turno/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHVybm9cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ma_no/OneDrive/Desktop/Materias 2do cuatri/Taller de programación/GitHUB/PNT1_Grupo14/Proyecto Final/MVCVeterinaria/MVCVeterinaria/Views/Turno/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHVybm9cRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ma_no/OneDrive/Desktop/Materias 2do cuatri/Taller de programación/GitHUB/PNT1_Grupo14/Proyecto Final/MVCVeterinaria/MVCVeterinaria/Views/Turno/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHVybm9cRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ma_no/OneDrive/Desktop/Materias 2do cuatri/Taller de programación/GitHUB/PNT1_Grupo14/Proyecto Final/MVCVeterinaria/MVCVeterinaria/Views/Turno/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHVybm9cRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ma_no/OneDrive/Desktop/Materias 2do cuatri/Taller de programación/GitHUB/PNT1_Grupo14/Proyecto Final/MVCVeterinaria/MVCVeterinaria/Views/Turno/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHVybm9cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ma_no/OneDrive/Desktop/Materias 2do cuatri/Taller de programación/GitHUB/PNT1_Grupo14/Proyecto Final/MVCVeterinaria/MVCVeterinaria/Views/Veterinario/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmV0ZXJpbmFyaW9cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ma_no/OneDrive/Desktop/Materias 2do cuatri/Taller de programación/GitHUB/PNT1_Grupo14/Proyecto Final/MVCVeterinaria/MVCVeterinaria/Views/Veterinario/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmV0ZXJpbmFyaW9cRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ma_no/OneDrive/Desktop/Materias 2do cuatri/Taller de programación/GitHUB/PNT1_Grupo14/Proyecto Final/MVCVeterinaria/MVCVeterinaria/Views/Veterinario/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmV0ZXJpbmFyaW9cRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ma_no/OneDrive/Desktop/Materias 2do cuatri/Taller de programación/GitHUB/PNT1_Grupo14/Proyecto Final/MVCVeterinaria/MVCVeterinaria/Views/Veterinario/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmV0ZXJpbmFyaW9cRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ma_no/OneDrive/Desktop/Materias 2do cuatri/Taller de programación/GitHUB/PNT1_Grupo14/Proyecto Final/MVCVeterinaria/MVCVeterinaria/Views/Veterinario/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmV0ZXJpbmFyaW9cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ma_no/OneDrive/Desktop/Materias 2do cuatri/Taller de programación/GitHUB/PNT1_Grupo14/Proyecto Final/MVCVeterinaria/MVCVeterinaria/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ma_no/source/repos/MVCVeterinaria/MVCVeterinaria/Views/_ViewStart.cshtml]
+[C:/Users/ma_no/OneDrive/Desktop/Materias 2do cuatri/Taller de programación/GitHUB/PNT1_Grupo14/Proyecto Final/MVCVeterinaria/MVCVeterinaria/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ma_no/source/repos/MVCVeterinaria/MVCVeterinaria/Views/Shared/_Layout.cshtml]
+[C:/Users/ma_no/OneDrive/Desktop/Materias 2do cuatri/Taller de programación/GitHUB/PNT1_Grupo14/Proyecto Final/MVCVeterinaria/MVCVeterinaria/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-6x4y3c62j2

@@ -14,6 +14,10 @@ namespace MVCVeterinaria.Context
         {
         }
         public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<MVCVeterinaria.Models.Evento> Evento { get; set; } = default!;
+        public DbSet<MVCVeterinaria.Models.Mascota> Mascota { get; set; } = default!;
+        public DbSet<MVCVeterinaria.Models.Turno> Turno { get; set; } = default!;
+        public DbSet<MVCVeterinaria.Models.Veterinario> Veterinario { get; set; } = default!;
 
     }
 }

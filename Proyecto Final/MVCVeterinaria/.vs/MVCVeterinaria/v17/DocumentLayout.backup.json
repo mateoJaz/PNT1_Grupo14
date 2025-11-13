@@ -1,26 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\ma_no\\source\\repos\\MVCVeterinaria\\",
+  "WorkspaceRootPath": "C:\\Users\\ma_no\\OneDrive\\Desktop\\Materias 2do cuatri\\Taller de programaci\u00F3n\\GitHUB\\PNT1_Grupo14\\Proyecto Final\\MVCVeterinaria\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ma_no\\source\\repos\\MVCVeterinaria\\MVCVeterinaria\\Migrations\\20251113001000_Inicial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MVCVeterinaria\\Migrations\\20251113001000_Inicial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ma_no\\OneDrive\\Desktop\\Materias 2do cuatri\\Taller de programaci\u00F3n\\GitHUB\\PNT1_Grupo14\\Proyecto Final\\MVCVeterinaria\\MVCVeterinaria\\Migrations\\20251113015005_2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MVCVeterinaria\\Migrations\\20251113015005_2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ma_no\\source\\repos\\MVCVeterinaria\\MVCVeterinaria\\Migrations\\20251113000858_Inicial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MVCVeterinaria\\Migrations\\20251113000858_Inicial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E759D66A-049A-4DB3-B8E7-49DC1C823593}|MVCVeterinaria\\MVCVeterinaria.csproj|c:\\users\\ma_no\\onedrive\\desktop\\materias 2do cuatri\\taller de programaci\u00F3n\\github\\pnt1_grupo14\\proyecto final\\mvcveterinaria\\mvcveterinaria\\controllers\\veterinariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E759D66A-049A-4DB3-B8E7-49DC1C823593}|MVCVeterinaria\\MVCVeterinaria.csproj|solutionrelative:mvcveterinaria\\controllers\\veterinariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ma_no\\source\\repos\\MVCVeterinaria\\MVCVeterinaria\\Migrations\\20251113000631_Initialize.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MVCVeterinaria\\Migrations\\20251113000631_Initialize.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E759D66A-049A-4DB3-B8E7-49DC1C823593}|MVCVeterinaria\\MVCVeterinaria.csproj|c:\\users\\ma_no\\onedrive\\desktop\\materias 2do cuatri\\taller de programaci\u00F3n\\github\\pnt1_grupo14\\proyecto final\\mvcveterinaria\\mvcveterinaria\\models\\evento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E759D66A-049A-4DB3-B8E7-49DC1C823593}|MVCVeterinaria\\MVCVeterinaria.csproj|solutionrelative:mvcveterinaria\\models\\evento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E759D66A-049A-4DB3-B8E7-49DC1C823593}|MVCVeterinaria\\MVCVeterinaria.csproj|c:\\users\\ma_no\\source\\repos\\mvcveterinaria\\mvcveterinaria\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E759D66A-049A-4DB3-B8E7-49DC1C823593}|MVCVeterinaria\\MVCVeterinaria.csproj|c:\\users\\ma_no\\onedrive\\desktop\\materias 2do cuatri\\taller de programaci\u00F3n\\github\\pnt1_grupo14\\proyecto final\\mvcveterinaria\\mvcveterinaria\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E759D66A-049A-4DB3-B8E7-49DC1C823593}|MVCVeterinaria\\MVCVeterinaria.csproj|solutionrelative:mvcveterinaria\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ma_no\\source\\repos\\MVCVeterinaria\\MVCVeterinaria\\Migrations\\20251113000253_ArregloID.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MVCVeterinaria\\Migrations\\20251113000253_ArregloID.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E759D66A-049A-4DB3-B8E7-49DC1C823593}|MVCVeterinaria\\MVCVeterinaria.csproj|c:\\users\\ma_no\\onedrive\\desktop\\materias 2do cuatri\\taller de programaci\u00F3n\\github\\pnt1_grupo14\\proyecto final\\mvcveterinaria\\mvcveterinaria\\models\\turno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E759D66A-049A-4DB3-B8E7-49DC1C823593}|MVCVeterinaria\\MVCVeterinaria.csproj|solutionrelative:mvcveterinaria\\models\\turno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E759D66A-049A-4DB3-B8E7-49DC1C823593}|MVCVeterinaria\\MVCVeterinaria.csproj|c:\\users\\ma_no\\onedrive\\desktop\\materias 2do cuatri\\taller de programaci\u00F3n\\github\\pnt1_grupo14\\proyecto final\\mvcveterinaria\\mvcveterinaria\\models\\veterinario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E759D66A-049A-4DB3-B8E7-49DC1C823593}|MVCVeterinaria\\MVCVeterinaria.csproj|solutionrelative:mvcveterinaria\\models\\veterinario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E759D66A-049A-4DB3-B8E7-49DC1C823593}|MVCVeterinaria\\MVCVeterinaria.csproj|c:\\users\\ma_no\\onedrive\\desktop\\materias 2do cuatri\\taller de programaci\u00F3n\\github\\pnt1_grupo14\\proyecto final\\mvcveterinaria\\mvcveterinaria\\models\\mascota.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E759D66A-049A-4DB3-B8E7-49DC1C823593}|MVCVeterinaria\\MVCVeterinaria.csproj|solutionrelative:mvcveterinaria\\models\\mascota.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,64 +43,90 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "20251113001000_Inicial.cs",
-              "DocumentMoniker": "C:\\Users\\ma_no\\source\\repos\\MVCVeterinaria\\MVCVeterinaria\\Migrations\\20251113001000_Inicial.cs",
-              "RelativeDocumentMoniker": "MVCVeterinaria\\Migrations\\20251113001000_Inicial.cs",
-              "ToolTip": "C:\\Users\\ma_no\\source\\repos\\MVCVeterinaria\\MVCVeterinaria\\Migrations\\20251113001000_Inicial.cs",
-              "RelativeToolTip": "MVCVeterinaria\\Migrations\\20251113001000_Inicial.cs",
+              "Title": "20251113015005_2.cs",
+              "DocumentMoniker": "C:\\Users\\ma_no\\OneDrive\\Desktop\\Materias 2do cuatri\\Taller de programaci\u00F3n\\GitHUB\\PNT1_Grupo14\\Proyecto Final\\MVCVeterinaria\\MVCVeterinaria\\Migrations\\20251113015005_2.cs",
+              "RelativeDocumentMoniker": "MVCVeterinaria\\Migrations\\20251113015005_2.cs",
+              "ToolTip": "C:\\Users\\ma_no\\OneDrive\\Desktop\\Materias 2do cuatri\\Taller de programaci\u00F3n\\GitHUB\\PNT1_Grupo14\\Proyecto Final\\MVCVeterinaria\\MVCVeterinaria\\Migrations\\20251113015005_2.cs",
+              "RelativeToolTip": "MVCVeterinaria\\Migrations\\20251113015005_2.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T00:10:00.845Z",
+              "WhenOpened": "2025-11-13T01:50:05.192Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "20251113000858_Inicial.cs",
-              "DocumentMoniker": "C:\\Users\\ma_no\\source\\repos\\MVCVeterinaria\\MVCVeterinaria\\Migrations\\20251113000858_Inicial.cs",
-              "RelativeDocumentMoniker": "MVCVeterinaria\\Migrations\\20251113000858_Inicial.cs",
-              "ToolTip": "C:\\Users\\ma_no\\source\\repos\\MVCVeterinaria\\MVCVeterinaria\\Migrations\\20251113000858_Inicial.cs",
-              "RelativeToolTip": "MVCVeterinaria\\Migrations\\20251113000858_Inicial.cs",
+              "Title": "VeterinarioController.cs",
+              "DocumentMoniker": "C:\\Users\\ma_no\\OneDrive\\Desktop\\Materias 2do cuatri\\Taller de programaci\u00F3n\\GitHUB\\PNT1_Grupo14\\Proyecto Final\\MVCVeterinaria\\MVCVeterinaria\\Controllers\\VeterinarioController.cs",
+              "RelativeDocumentMoniker": "MVCVeterinaria\\Controllers\\VeterinarioController.cs",
+              "ToolTip": "C:\\Users\\ma_no\\OneDrive\\Desktop\\Materias 2do cuatri\\Taller de programaci\u00F3n\\GitHUB\\PNT1_Grupo14\\Proyecto Final\\MVCVeterinaria\\MVCVeterinaria\\Controllers\\VeterinarioController.cs",
+              "RelativeToolTip": "MVCVeterinaria\\Controllers\\VeterinarioController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T00:08:58.171Z",
+              "WhenOpened": "2025-11-13T01:47:27.848Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "20251113000631_Initialize.cs",
-              "DocumentMoniker": "C:\\Users\\ma_no\\source\\repos\\MVCVeterinaria\\MVCVeterinaria\\Migrations\\20251113000631_Initialize.cs",
-              "RelativeDocumentMoniker": "MVCVeterinaria\\Migrations\\20251113000631_Initialize.cs",
-              "ToolTip": "C:\\Users\\ma_no\\source\\repos\\MVCVeterinaria\\MVCVeterinaria\\Migrations\\20251113000631_Initialize.cs",
-              "RelativeToolTip": "MVCVeterinaria\\Migrations\\20251113000631_Initialize.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "Evento.cs",
+              "DocumentMoniker": "C:\\Users\\ma_no\\OneDrive\\Desktop\\Materias 2do cuatri\\Taller de programaci\u00F3n\\GitHUB\\PNT1_Grupo14\\Proyecto Final\\MVCVeterinaria\\MVCVeterinaria\\Models\\Evento.cs",
+              "RelativeDocumentMoniker": "MVCVeterinaria\\Models\\Evento.cs",
+              "ToolTip": "C:\\Users\\ma_no\\OneDrive\\Desktop\\Materias 2do cuatri\\Taller de programaci\u00F3n\\GitHUB\\PNT1_Grupo14\\Proyecto Final\\MVCVeterinaria\\MVCVeterinaria\\Models\\Evento.cs",
+              "RelativeToolTip": "MVCVeterinaria\\Models\\Evento.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T00:06:31.354Z",
+              "WhenOpened": "2025-11-13T01:27:35.741Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "20251113000253_ArregloID.cs",
-              "DocumentMoniker": "C:\\Users\\ma_no\\source\\repos\\MVCVeterinaria\\MVCVeterinaria\\Migrations\\20251113000253_ArregloID.cs",
-              "RelativeDocumentMoniker": "MVCVeterinaria\\Migrations\\20251113000253_ArregloID.cs",
-              "ToolTip": "C:\\Users\\ma_no\\source\\repos\\MVCVeterinaria\\MVCVeterinaria\\Migrations\\20251113000253_ArregloID.cs",
-              "RelativeToolTip": "MVCVeterinaria\\Migrations\\20251113000253_ArregloID.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "Turno.cs",
+              "DocumentMoniker": "C:\\Users\\ma_no\\OneDrive\\Desktop\\Materias 2do cuatri\\Taller de programaci\u00F3n\\GitHUB\\PNT1_Grupo14\\Proyecto Final\\MVCVeterinaria\\MVCVeterinaria\\Models\\Turno.cs",
+              "RelativeDocumentMoniker": "MVCVeterinaria\\Models\\Turno.cs",
+              "ToolTip": "C:\\Users\\ma_no\\OneDrive\\Desktop\\Materias 2do cuatri\\Taller de programaci\u00F3n\\GitHUB\\PNT1_Grupo14\\Proyecto Final\\MVCVeterinaria\\MVCVeterinaria\\Models\\Turno.cs",
+              "RelativeToolTip": "MVCVeterinaria\\Models\\Turno.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T00:02:53.813Z",
+              "WhenOpened": "2025-11-13T01:17:43.841Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Veterinario.cs",
+              "DocumentMoniker": "C:\\Users\\ma_no\\OneDrive\\Desktop\\Materias 2do cuatri\\Taller de programaci\u00F3n\\GitHUB\\PNT1_Grupo14\\Proyecto Final\\MVCVeterinaria\\MVCVeterinaria\\Models\\Veterinario.cs",
+              "RelativeDocumentMoniker": "MVCVeterinaria\\Models\\Veterinario.cs",
+              "ToolTip": "C:\\Users\\ma_no\\OneDrive\\Desktop\\Materias 2do cuatri\\Taller de programaci\u00F3n\\GitHUB\\PNT1_Grupo14\\Proyecto Final\\MVCVeterinaria\\MVCVeterinaria\\Models\\Veterinario.cs",
+              "RelativeToolTip": "MVCVeterinaria\\Models\\Veterinario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T00:28:39.928Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Mascota.cs",
+              "DocumentMoniker": "C:\\Users\\ma_no\\OneDrive\\Desktop\\Materias 2do cuatri\\Taller de programaci\u00F3n\\GitHUB\\PNT1_Grupo14\\Proyecto Final\\MVCVeterinaria\\MVCVeterinaria\\Models\\Mascota.cs",
+              "RelativeDocumentMoniker": "MVCVeterinaria\\Models\\Mascota.cs",
+              "ToolTip": "C:\\Users\\ma_no\\OneDrive\\Desktop\\Materias 2do cuatri\\Taller de programaci\u00F3n\\GitHUB\\PNT1_Grupo14\\Proyecto Final\\MVCVeterinaria\\MVCVeterinaria\\Models\\Mascota.cs",
+              "RelativeToolTip": "MVCVeterinaria\\Models\\Mascota.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T00:22:30.643Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "Cliente.cs",
-              "DocumentMoniker": "C:\\Users\\ma_no\\source\\repos\\MVCVeterinaria\\MVCVeterinaria\\Models\\Cliente.cs",
+              "DocumentMoniker": "C:\\Users\\ma_no\\OneDrive\\Desktop\\Materias 2do cuatri\\Taller de programaci\u00F3n\\GitHUB\\PNT1_Grupo14\\Proyecto Final\\MVCVeterinaria\\MVCVeterinaria\\Models\\Cliente.cs",
               "RelativeDocumentMoniker": "MVCVeterinaria\\Models\\Cliente.cs",
-              "ToolTip": "C:\\Users\\ma_no\\source\\repos\\MVCVeterinaria\\MVCVeterinaria\\Models\\Cliente.cs",
+              "ToolTip": "C:\\Users\\ma_no\\OneDrive\\Desktop\\Materias 2do cuatri\\Taller de programaci\u00F3n\\GitHUB\\PNT1_Grupo14\\Proyecto Final\\MVCVeterinaria\\MVCVeterinaria\\Models\\Cliente.cs",
               "RelativeToolTip": "MVCVeterinaria\\Models\\Cliente.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-12T22:34:24.584Z",
               "EditorCaption": ""

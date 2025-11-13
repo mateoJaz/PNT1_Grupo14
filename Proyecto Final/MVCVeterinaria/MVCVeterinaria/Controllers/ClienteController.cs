@@ -34,7 +34,7 @@ namespace MVCVeterinaria.Controllers
             }
 
             var cliente = await _context.Clientes
-                .FirstOrDefaultAsync(m => m.DNI == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (cliente == null)
             {
                 return NotFound();
@@ -54,7 +54,7 @@ namespace MVCVeterinaria.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("DNI,Nombre,Apellido,Email,Telefono,Direccion")] Cliente cliente)
+        public async Task<IActionResult> Create([Bind("Id,DNI,Nombre,Apellido,Email,Telefono,Direccion")] Cliente cliente)
         {
             if (ModelState.IsValid)
             {
@@ -86,9 +86,9 @@ namespace MVCVeterinaria.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("DNI,Nombre,Apellido,Email,Telefono,Direccion")] Cliente cliente)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,DNI,Nombre,Apellido,Email,Telefono,Direccion")] Cliente cliente)
         {
-            if (id != cliente.DNI)
+            if (id != cliente.Id)
             {
                 return NotFound();
             }
@@ -102,7 +102,7 @@ namespace MVCVeterinaria.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ClienteExists(cliente.DNI))
+                    if (!ClienteExists(cliente.Id))
                     {
                         return NotFound();
                     }
@@ -125,7 +125,7 @@ namespace MVCVeterinaria.Controllers
             }
 
             var cliente = await _context.Clientes
-                .FirstOrDefaultAsync(m => m.DNI == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (cliente == null)
             {
                 return NotFound();
@@ -151,7 +151,7 @@ namespace MVCVeterinaria.Controllers
 
         private bool ClienteExists(int id)
         {
-            return _context.Clientes.Any(e => e.DNI == id);
+            return _context.Clientes.Any(e => e.Id == id);
         }
     }
 }

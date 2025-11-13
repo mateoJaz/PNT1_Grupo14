@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MVCVeterinaria.Migrations
 {
     [DbContext(typeof(VeterinariaDatabaseContext))]
-    [Migration("20251113001000_Inicial")]
+    [Migration("20251113014233_Inicial")]
     partial class Inicial
     {
         /// <inheritdoc />
@@ -26,12 +26,18 @@ namespace MVCVeterinaria.Migrations
 
             modelBuilder.Entity("MVCVeterinaria.Models.Cliente", b =>
                 {
-                    b.Property<int>("DNI")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Apellido")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("DNI")
+                        .HasColumnType("int");
 
                     b.Property<string>("Direccion")
                         .IsRequired()
@@ -48,7 +54,7 @@ namespace MVCVeterinaria.Migrations
                     b.Property<int>("Telefono")
                         .HasColumnType("int");
 
-                    b.HasKey("DNI");
+                    b.HasKey("Id");
 
                     b.ToTable("Clientes");
                 });
