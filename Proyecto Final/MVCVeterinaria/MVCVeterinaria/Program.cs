@@ -9,7 +9,7 @@ namespace MVCVeterinaria
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            builder.Services.AddDbContext<VeterinariaDatabaseContext>(options => options.UseSqlServer(builder.Configuration["ConnectionString:EscuelaDBConnection"]));
+            builder.Services.AddDbContext<VeterinariaDatabaseContext>(options => options.UseSqlServer(builder.Configuration["ConnectionString:VeterinariaDBConnection"]));
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();

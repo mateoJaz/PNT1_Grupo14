@@ -7,7 +7,7 @@ namespace MVCVeterinaria.Models
     public class Cliente
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int DNI { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
