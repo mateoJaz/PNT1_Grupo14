@@ -15,5 +15,7 @@ namespace MVCVeterinaria.Models
         public int Telefono { get; set; }
         public string Direccion { get; set; }
         public string Especialidad { get; set; }
+
+        public List<Turno> Turnos { get; set; }
     }
 }

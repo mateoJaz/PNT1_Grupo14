@@ -22,7 +22,8 @@ namespace MVCVeterinaria.Controllers
         // GET: Evento
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Evento.ToListAsync());
+            var veterinariaDatabaseContext = _context.Evento.Include(e => e.Veterinario);
+            return View(await veterinariaDatabaseContext.ToListAsync());
         }
 
         // GET: Evento/Details/5
@@ -34,6 +35,7 @@ namespace MVCVeterinaria.Controllers
             }
 
             var evento = await _context.Evento
+                .Include(e => e.Veterinario)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (evento == null)
             {
@@ -46,6 +48,7 @@ namespace MVCVeterinaria.Controllers
         // GET: Evento/Create
         public IActionResult Create()
         {
+            ViewData["VeterinarioId"] = new SelectList(_context.Veterinario, "Id", "Id");
             return View();
         }
 
@@ -54,7 +57,7 @@ namespace MVCVeterinaria.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,TipoEvento,Detalle,IdMascota,DNIVeterinario")] Evento evento)
+        public async Task<IActionResult> Create([Bind("Id,TipoEvento,Detalle,FechaHorario,MascotaId,VeterinarioId")] Evento evento)
         {
             if (ModelState.IsValid)
             {
@@ -62,6 +65,7 @@ namespace MVCVeterinaria.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["VeterinarioId"] = new SelectList(_context.Veterinario, "Id", "Id", evento.VeterinarioId);
             return View(evento);
         }
 
@@ -78,6 +82,7 @@ namespace MVCVeterinaria.Controllers
             {
                 return NotFound();
             }
+            ViewData["VeterinarioId"] = new SelectList(_context.Veterinario, "Id", "Id", evento.VeterinarioId);
             return View(evento);
         }
 
@@ -86,7 +91,7 @@ namespace MVCVeterinaria.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,TipoEvento,Detalle,IdMascota,DNIVeterinario")] Evento evento)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,TipoEvento,Detalle,FechaHorario,MascotaId,VeterinarioId")] Evento evento)
         {
             if (id != evento.Id)
             {
@@ -113,6 +118,7 @@ namespace MVCVeterinaria.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["VeterinarioId"] = new SelectList(_context.Veterinario, "Id", "Id", evento.VeterinarioId);
             return View(evento);
         }
 
@@ -125,6 +131,7 @@ namespace MVCVeterinaria.Controllers
             }
 
             var evento = await _context.Evento
+                .Include(e => e.Veterinario)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (evento == null)
             {

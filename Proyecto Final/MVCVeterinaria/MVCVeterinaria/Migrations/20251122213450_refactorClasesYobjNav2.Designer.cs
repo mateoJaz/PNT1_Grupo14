@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MVCVeterinaria.Migrations
 {
     [DbContext(typeof(VeterinariaDatabaseContext))]
-    [Migration("20251113015005_2")]
-    partial class _2
+    [Migration("20251122213450_refactorClasesYobjNav2")]
+    partial class refactorClasesYobjNav2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -68,21 +68,28 @@ namespace MVCVeterinaria.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("DNIVeterinario")
-                        .HasColumnType("int");
-
                     b.Property<string>("Detalle")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("IdMascota")
+                    b.Property<DateTime>("FechaHorario")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("MascotaId")
                         .HasColumnType("int");
 
                     b.Property<string>("TipoEvento")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("VeterinarioId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("MascotaId");
+
+                    b.HasIndex("VeterinarioId");
 
                     b.ToTable("Evento");
                 });
@@ -95,7 +102,7 @@ namespace MVCVeterinaria.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("DNICliente")
+                    b.Property<int>("ClienteId")
                         .HasColumnType("int");
 
                     b.Property<int>("Edad")
@@ -116,7 +123,12 @@ namespace MVCVeterinaria.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("vivo")
+                        .HasColumnType("bit");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("ClienteId");
 
                     b.ToTable("Mascota");
                 });
@@ -129,7 +141,7 @@ namespace MVCVeterinaria.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("DNIVeterinario")
+                    b.Property<int?>("ClienteId")
                         .HasColumnType("int");
 
                     b.Property<string>("Detalle")
@@ -139,10 +151,19 @@ namespace MVCVeterinaria.Migrations
                     b.Property<DateTime>("FechaHorario")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("IdMascota")
+                    b.Property<int?>("MascotaId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("VeterinarioId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ClienteId");
+
+                    b.HasIndex("MascotaId");
+
+                    b.HasIndex("VeterinarioId");
 
                     b.ToTable("Turno");
                 });
@@ -184,6 +205,72 @@ namespace MVCVeterinaria.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Veterinario");
+                });
+
+            modelBuilder.Entity("MVCVeterinaria.Models.Evento", b =>
+                {
+                    b.HasOne("MVCVeterinaria.Models.Mascota", null)
+                        .WithMany("HistorialClinico")
+                        .HasForeignKey("MascotaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MVCVeterinaria.Models.Veterinario", "Veterinario")
+                        .WithMany()
+                        .HasForeignKey("VeterinarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Veterinario");
+                });
+
+            modelBuilder.Entity("MVCVeterinaria.Models.Mascota", b =>
+                {
+                    b.HasOne("MVCVeterinaria.Models.Cliente", "Cliente")
+                        .WithMany("Mascotas")
+                        .HasForeignKey("ClienteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Cliente");
+                });
+
+            modelBuilder.Entity("MVCVeterinaria.Models.Turno", b =>
+                {
+                    b.HasOne("MVCVeterinaria.Models.Cliente", "Cliente")
+                        .WithMany("Turnos")
+                        .HasForeignKey("ClienteId");
+
+                    b.HasOne("MVCVeterinaria.Models.Mascota", "Mascota")
+                        .WithMany()
+                        .HasForeignKey("MascotaId");
+
+                    b.HasOne("MVCVeterinaria.Models.Veterinario", "Veterinario")
+                        .WithMany("Turnos")
+                        .HasForeignKey("VeterinarioId");
+
+                    b.Navigation("Cliente");
+
+                    b.Navigation("Mascota");
+
+                    b.Navigation("Veterinario");
+                });
+
+            modelBuilder.Entity("MVCVeterinaria.Models.Cliente", b =>
+                {
+                    b.Navigation("Mascotas");
+
+                    b.Navigation("Turnos");
+                });
+
+            modelBuilder.Entity("MVCVeterinaria.Models.Mascota", b =>
+                {
+                    b.Navigation("HistorialClinico");
+                });
+
+            modelBuilder.Entity("MVCVeterinaria.Models.Veterinario", b =>
+                {
+                    b.Navigation("Turnos");
                 });
 #pragma warning restore 612, 618
         }

@@ -8,10 +8,11 @@ namespace MVCVeterinaria.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        [ForeignKey("Mascota")]
-        public int IdMascota { get; set; }
-        [ForeignKey("Veterinario")]
-        public int DNIVeterinario { get; set; }
+        public int? MascotaId { get; set; }
+        public Mascota? Mascota { get; set; }
+        public Cliente? Cliente { get; set; }
+        public int? VeterinarioId { get; set; }
+        public Veterinario? Veterinario { get; set; }
         public DateTime FechaHorario { get; set; }
         public String Detalle { get; set; }
 

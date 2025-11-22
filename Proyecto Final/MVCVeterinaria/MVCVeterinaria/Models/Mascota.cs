@@ -8,14 +8,18 @@ namespace MVCVeterinaria.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        [ForeignKey("Cliente")]
-        public int DNICliente { get; set; }
+        public int ClienteId { get; set; }
+        public Cliente Cliente { get; set; }
         public string Nombre { get; set; }
         public string Especie { get; set; }
         public string Raza { get; set; }
         public int Edad { get; set; }
         public double Peso { get; set; }
-    
+        public bool Vivo { get; set; } = true;
+
+
+
+        public List<Evento> HistorialClinico { get; set; }
 
     }
 }
