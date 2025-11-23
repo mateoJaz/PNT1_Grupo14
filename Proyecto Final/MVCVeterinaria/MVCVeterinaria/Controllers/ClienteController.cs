@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MVCVeterinaria.Context;
 using MVCVeterinaria.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace MVCVeterinaria.Controllers
 {
@@ -22,8 +24,30 @@ namespace MVCVeterinaria.Controllers
         // GET: Cliente
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Clientes.ToListAsync());
+            var clientes = await _context.Clientes.ToListAsync();
+
+            return View(clientes);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Index(string apellido, int? dni)
+        {
+            var query = _context.Clientes.AsQueryable();
+
+            if (!string.IsNullOrEmpty(apellido))
+            {
+                query = query.Where(c => c.Apellido.Contains(apellido));
+            }
+            if (dni.HasValue)
+            {
+                query = query.Where(c => c.DNI == dni.Value);
+            }
+            var clientes = await query.ToListAsync();
+
+            return View(clientes);
+        }
+
 
         // GET: Cliente/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -56,6 +80,8 @@ namespace MVCVeterinaria.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,DNI,Nombre,Apellido,Email,Telefono,Direccion")] Cliente cliente)
         {
+            ModelState.Remove("Mascotas");
+            ModelState.Remove("Turnos");
             if (ModelState.IsValid)
             {
                 _context.Add(cliente);
@@ -68,6 +94,7 @@ namespace MVCVeterinaria.Controllers
         // GET: Cliente/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+
             if (id == null)
             {
                 return NotFound();
@@ -88,10 +115,13 @@ namespace MVCVeterinaria.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,DNI,Nombre,Apellido,Email,Telefono,Direccion")] Cliente cliente)
         {
+
             if (id != cliente.Id)
             {
                 return NotFound();
             }
+            ModelState.Remove("Mascotas");
+            ModelState.Remove("Turnos");
 
             if (ModelState.IsValid)
             {

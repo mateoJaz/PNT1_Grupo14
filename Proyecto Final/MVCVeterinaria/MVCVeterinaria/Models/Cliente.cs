@@ -19,5 +19,10 @@ namespace MVCVeterinaria.Models
         public List<Mascota> Mascotas { get; set; }
         public List<Turno> Turnos { get; set; }
 
+        public String NombreCompleto
+        {
+            get { return Nombre + " " + Apellido; }
+        }
+
     }
 }

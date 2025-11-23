@@ -48,7 +48,7 @@ namespace MVCVeterinaria.Controllers
         // GET: Mascota/Create
         public IActionResult Create()
         {
-            ViewData["ClienteId"] = new SelectList(_context.Clientes, "Id", "Id");
+            ViewData["ClienteId"] = new SelectList(_context.Clientes, "Id", "NombreCompleto");
             return View();
         }
 
@@ -57,15 +57,18 @@ namespace MVCVeterinaria.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,ClienteId,Nombre,Especie,Raza,Edad,Peso,Vivo")] Mascota mascota)
-        {
+        public async Task<IActionResult> Create([Bind("Id,ClienteId,Nombre,Especie,Raza,Edad,Peso")] Mascota mascota)
+        {   
+            mascota.Vivo = true;
+            ModelState.Remove("HistorialClinico");
+            ModelState.Remove("Cliente");
             if (ModelState.IsValid)
             {
                 _context.Add(mascota);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ClienteId"] = new SelectList(_context.Clientes, "Id", "Id", mascota.ClienteId);
+            ViewData["ClienteId"] = new SelectList(_context.Clientes, "Id", "NombreCompleto", mascota.ClienteId);
             return View(mascota);
         }
 
@@ -82,7 +85,7 @@ namespace MVCVeterinaria.Controllers
             {
                 return NotFound();
             }
-            ViewData["ClienteId"] = new SelectList(_context.Clientes, "Id", "Id", mascota.ClienteId);
+            ViewData["ClienteId"] = new SelectList(_context.Clientes, "Id", "NombreCompleto", mascota.ClienteId);
             return View(mascota);
         }
 
@@ -97,6 +100,8 @@ namespace MVCVeterinaria.Controllers
             {
                 return NotFound();
             }
+            ModelState.Remove("HistorialClinico");
+            ModelState.Remove("Cliente");
 
             if (ModelState.IsValid)
             {
@@ -118,7 +123,7 @@ namespace MVCVeterinaria.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ClienteId"] = new SelectList(_context.Clientes, "Id", "Id", mascota.ClienteId);
+            ViewData["ClienteId"] = new SelectList(_context.Clientes, "Id", "NombreCompleto", mascota.ClienteId);
             return View(mascota);
         }
 

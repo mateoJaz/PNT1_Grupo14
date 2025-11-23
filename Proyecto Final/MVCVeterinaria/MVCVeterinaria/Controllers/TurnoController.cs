@@ -61,6 +61,7 @@ namespace MVCVeterinaria.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,MascotaId,VeterinarioId,FechaHorario,Detalle")] Turno turno)
         {
+            ModelState.Remove("Turnos");
             if (ModelState.IsValid)
             {
                 _context.Add(turno);
@@ -101,6 +102,7 @@ namespace MVCVeterinaria.Controllers
             {
                 return NotFound();
             }
+            ModelState.Remove("Turnos");
 
             if (ModelState.IsValid)
             {
