@@ -3,16 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\Mateo\\Desktop\\TerciarioOrt\\Semestre2_25\\TallerProgramacion1\\Github\\PNT1_Grupo14\\Proyecto Final\\MVCVeterinaria\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E759D66A-049A-4DB3-B8E7-49DC1C823593}|MVCVeterinaria\\MVCVeterinaria.csproj|c:\\users\\mateo\\desktop\\terciarioort\\semestre2_25\\tallerprogramacion1\\github\\pnt1_grupo14\\proyecto final\\mvcveterinaria\\mvcveterinaria\\views\\cliente\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E759D66A-049A-4DB3-B8E7-49DC1C823593}|MVCVeterinaria\\MVCVeterinaria.csproj|solutionrelative:mvcveterinaria\\views\\cliente\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E759D66A-049A-4DB3-B8E7-49DC1C823593}|MVCVeterinaria\\MVCVeterinaria.csproj|c:\\users\\mateo\\desktop\\terciarioort\\semestre2_25\\tallerprogramacion1\\github\\pnt1_grupo14\\proyecto final\\mvcveterinaria\\mvcveterinaria\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E759D66A-049A-4DB3-B8E7-49DC1C823593}|MVCVeterinaria\\MVCVeterinaria.csproj|solutionrelative:mvcveterinaria\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E759D66A-049A-4DB3-B8E7-49DC1C823593}|MVCVeterinaria\\MVCVeterinaria.csproj|c:\\users\\mateo\\desktop\\terciarioort\\semestre2_25\\tallerprogramacion1\\github\\pnt1_grupo14\\proyecto final\\mvcveterinaria\\mvcveterinaria\\views\\cliente\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E759D66A-049A-4DB3-B8E7-49DC1C823593}|MVCVeterinaria\\MVCVeterinaria.csproj|solutionrelative:mvcveterinaria\\views\\cliente\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E759D66A-049A-4DB3-B8E7-49DC1C823593}|MVCVeterinaria\\MVCVeterinaria.csproj|c:\\users\\mateo\\desktop\\terciarioort\\semestre2_25\\tallerprogramacion1\\github\\pnt1_grupo14\\proyecto final\\mvcveterinaria\\mvcveterinaria\\controllers\\eventocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E759D66A-049A-4DB3-B8E7-49DC1C823593}|MVCVeterinaria\\MVCVeterinaria.csproj|solutionrelative:mvcveterinaria\\controllers\\eventocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E759D66A-049A-4DB3-B8E7-49DC1C823593}|MVCVeterinaria\\MVCVeterinaria.csproj|c:\\users\\mateo\\desktop\\terciarioort\\semestre2_25\\tallerprogramacion1\\github\\pnt1_grupo14\\proyecto final\\mvcveterinaria\\mvcveterinaria\\controllers\\mascotacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E759D66A-049A-4DB3-B8E7-49DC1C823593}|MVCVeterinaria\\MVCVeterinaria.csproj|solutionrelative:mvcveterinaria\\controllers\\mascotacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E759D66A-049A-4DB3-B8E7-49DC1C823593}|MVCVeterinaria\\MVCVeterinaria.csproj|c:\\users\\mateo\\desktop\\terciarioort\\semestre2_25\\tallerprogramacion1\\github\\pnt1_grupo14\\proyecto final\\mvcveterinaria\\mvcveterinaria\\views\\cliente\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E759D66A-049A-4DB3-B8E7-49DC1C823593}|MVCVeterinaria\\MVCVeterinaria.csproj|solutionrelative:mvcveterinaria\\views\\cliente\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E759D66A-049A-4DB3-B8E7-49DC1C823593}|MVCVeterinaria\\MVCVeterinaria.csproj|c:\\users\\mateo\\desktop\\terciarioort\\semestre2_25\\tallerprogramacion1\\github\\pnt1_grupo14\\proyecto final\\mvcveterinaria\\mvcveterinaria\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E759D66A-049A-4DB3-B8E7-49DC1C823593}|MVCVeterinaria\\MVCVeterinaria.csproj|solutionrelative:mvcveterinaria\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E759D66A-049A-4DB3-B8E7-49DC1C823593}|MVCVeterinaria\\MVCVeterinaria.csproj|c:\\users\\mateo\\desktop\\terciarioort\\semestre2_25\\tallerprogramacion1\\github\\pnt1_grupo14\\proyecto final\\mvcveterinaria\\mvcveterinaria\\models\\evento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E759D66A-049A-4DB3-B8E7-49DC1C823593}|MVCVeterinaria\\MVCVeterinaria.csproj|solutionrelative:mvcveterinaria\\models\\evento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E759D66A-049A-4DB3-B8E7-49DC1C823593}|MVCVeterinaria\\MVCVeterinaria.csproj|c:\\users\\mateo\\desktop\\terciarioort\\semestre2_25\\tallerprogramacion1\\github\\pnt1_grupo14\\proyecto final\\mvcveterinaria\\mvcveterinaria\\views\\cliente\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E759D66A-049A-4DB3-B8E7-49DC1C823593}|MVCVeterinaria\\MVCVeterinaria.csproj|solutionrelative:mvcveterinaria\\views\\cliente\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,38 +47,90 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "C:\\Users\\Mateo\\Desktop\\TerciarioOrt\\Semestre2_25\\TallerProgramacion1\\Github\\PNT1_Grupo14\\Proyecto Final\\MVCVeterinaria\\MVCVeterinaria\\Views\\Cliente\\Edit.cshtml",
-              "RelativeDocumentMoniker": "MVCVeterinaria\\Views\\Cliente\\Edit.cshtml",
-              "ToolTip": "C:\\Users\\Mateo\\Desktop\\TerciarioOrt\\Semestre2_25\\TallerProgramacion1\\Github\\PNT1_Grupo14\\Proyecto Final\\MVCVeterinaria\\MVCVeterinaria\\Views\\Cliente\\Edit.cshtml",
-              "RelativeToolTip": "MVCVeterinaria\\Views\\Cliente\\Edit.cshtml",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAADMAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-23T17:23:05.579Z",
+              "Title": "Cliente.cs",
+              "DocumentMoniker": "C:\\Users\\Mateo\\Desktop\\TerciarioOrt\\Semestre2_25\\TallerProgramacion1\\Github\\PNT1_Grupo14\\Proyecto Final\\MVCVeterinaria\\MVCVeterinaria\\Models\\Cliente.cs",
+              "RelativeDocumentMoniker": "MVCVeterinaria\\Models\\Cliente.cs",
+              "ToolTip": "C:\\Users\\Mateo\\Desktop\\TerciarioOrt\\Semestre2_25\\TallerProgramacion1\\Github\\PNT1_Grupo14\\Proyecto Final\\MVCVeterinaria\\MVCVeterinaria\\Models\\Cliente.cs",
+              "RelativeToolTip": "MVCVeterinaria\\Models\\Cliente.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T18:29:48.693Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Evento.cs",
+              "DocumentMoniker": "C:\\Users\\Mateo\\Desktop\\TerciarioOrt\\Semestre2_25\\TallerProgramacion1\\Github\\PNT1_Grupo14\\Proyecto Final\\MVCVeterinaria\\MVCVeterinaria\\Models\\Evento.cs",
+              "RelativeDocumentMoniker": "MVCVeterinaria\\Models\\Evento.cs",
+              "ToolTip": "C:\\Users\\Mateo\\Desktop\\TerciarioOrt\\Semestre2_25\\TallerProgramacion1\\Github\\PNT1_Grupo14\\Proyecto Final\\MVCVeterinaria\\MVCVeterinaria\\Models\\Evento.cs",
+              "RelativeToolTip": "MVCVeterinaria\\Models\\Evento.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T18:08:59.35Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "EventoController.cs",
+              "DocumentMoniker": "C:\\Users\\Mateo\\Desktop\\TerciarioOrt\\Semestre2_25\\TallerProgramacion1\\Github\\PNT1_Grupo14\\Proyecto Final\\MVCVeterinaria\\MVCVeterinaria\\Controllers\\EventoController.cs",
+              "RelativeDocumentMoniker": "MVCVeterinaria\\Controllers\\EventoController.cs",
+              "ToolTip": "C:\\Users\\Mateo\\Desktop\\TerciarioOrt\\Semestre2_25\\TallerProgramacion1\\Github\\PNT1_Grupo14\\Proyecto Final\\MVCVeterinaria\\MVCVeterinaria\\Controllers\\EventoController.cs",
+              "RelativeToolTip": "MVCVeterinaria\\Controllers\\EventoController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T18:08:53.08Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MascotaController.cs",
+              "DocumentMoniker": "C:\\Users\\Mateo\\Desktop\\TerciarioOrt\\Semestre2_25\\TallerProgramacion1\\Github\\PNT1_Grupo14\\Proyecto Final\\MVCVeterinaria\\MVCVeterinaria\\Controllers\\MascotaController.cs",
+              "RelativeDocumentMoniker": "MVCVeterinaria\\Controllers\\MascotaController.cs",
+              "ToolTip": "C:\\Users\\Mateo\\Desktop\\TerciarioOrt\\Semestre2_25\\TallerProgramacion1\\Github\\PNT1_Grupo14\\Proyecto Final\\MVCVeterinaria\\MVCVeterinaria\\Controllers\\MascotaController.cs",
+              "RelativeToolTip": "MVCVeterinaria\\Controllers\\MascotaController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADAAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T18:05:51.877Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\Mateo\\Desktop\\TerciarioOrt\\Semestre2_25\\TallerProgramacion1\\Github\\PNT1_Grupo14\\Proyecto Final\\MVCVeterinaria\\MVCVeterinaria\\Views\\Cliente\\Details.cshtml",
+              "RelativeDocumentMoniker": "MVCVeterinaria\\Views\\Cliente\\Details.cshtml",
+              "ToolTip": "C:\\Users\\Mateo\\Desktop\\TerciarioOrt\\Semestre2_25\\TallerProgramacion1\\Github\\PNT1_Grupo14\\Proyecto Final\\MVCVeterinaria\\MVCVeterinaria\\Views\\Cliente\\Details.cshtml",
+              "RelativeToolTip": "MVCVeterinaria\\Views\\Cliente\\Details.cshtml",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAqwGkAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-23T17:27:32.751Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Mateo\\Desktop\\TerciarioOrt\\Semestre2_25\\TallerProgramacion1\\Github\\PNT1_Grupo14\\Proyecto Final\\MVCVeterinaria\\MVCVeterinaria\\Views\\Cliente\\Index.cshtml",
               "RelativeDocumentMoniker": "MVCVeterinaria\\Views\\Cliente\\Index.cshtml",
               "ToolTip": "C:\\Users\\Mateo\\Desktop\\TerciarioOrt\\Semestre2_25\\TallerProgramacion1\\Github\\PNT1_Grupo14\\Proyecto Final\\MVCVeterinaria\\MVCVeterinaria\\Views\\Cliente\\Index.cshtml",
               "RelativeToolTip": "MVCVeterinaria\\Views\\Cliente\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEoAAABOAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-11-23T16:37:35.762Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "ClienteController.cs",
               "DocumentMoniker": "C:\\Users\\Mateo\\Desktop\\TerciarioOrt\\Semestre2_25\\TallerProgramacion1\\Github\\PNT1_Grupo14\\Proyecto Final\\MVCVeterinaria\\MVCVeterinaria\\Controllers\\ClienteController.cs",
               "RelativeDocumentMoniker": "MVCVeterinaria\\Controllers\\ClienteController.cs",
               "ToolTip": "C:\\Users\\Mateo\\Desktop\\TerciarioOrt\\Semestre2_25\\TallerProgramacion1\\Github\\PNT1_Grupo14\\Proyecto Final\\MVCVeterinaria\\MVCVeterinaria\\Controllers\\ClienteController.cs",
               "RelativeToolTip": "MVCVeterinaria\\Controllers\\ClienteController.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAQwCUAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAAgwD8AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-23T16:25:57.615Z",
               "EditorCaption": ""

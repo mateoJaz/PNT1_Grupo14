@@ -46,7 +46,7 @@ namespace MVCVeterinaria.Controllers
         }
 
         // GET: Mascota/Create
-        public IActionResult Create()
+        public IActionResult Create(int idCliente)
         {
             ViewData["ClienteId"] = new SelectList(_context.Clientes, "Id", "NombreCompleto");
             return View();
