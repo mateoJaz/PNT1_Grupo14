@@ -57,7 +57,7 @@ namespace MVCVeterinaria.Controllers
                 return NotFound();
             }
 
-            var cliente = await _context.Clientes
+            var cliente = await _context.Clientes.Include(c => c.Mascotas)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (cliente == null)
             {
