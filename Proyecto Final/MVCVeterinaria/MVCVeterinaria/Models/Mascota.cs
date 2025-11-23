@@ -23,10 +23,15 @@ namespace MVCVeterinaria.Models
         {
             get
             {
-                var hoy = DateTime.Today;
-                var edad = hoy.Year - FechaNacimiento.Year;
-                // Restamos un año si aún no cumplió años en la fecha actual
-                if (FechaNacimiento.Date > hoy.AddYears(-edad)) edad--;
+                var edad = -1;
+                if (Vivo)
+                {
+                    var hoy = DateTime.Today;
+                    edad = hoy.Year - FechaNacimiento.Year;
+                    // Restamos un año si aún no cumplió años en la fecha actual
+                    if (FechaNacimiento.Date > hoy.AddYears(-edad)) edad--;
+                }
+
                 return edad;
             }
         }

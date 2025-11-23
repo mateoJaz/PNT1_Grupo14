@@ -55,6 +55,61 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <h2>Turnos Pendientes</h2>
+
+    @if (Model.Turnos != null && Model.Turnos.Any())
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Fecha y Hora</th>
+                    <th>Mascota</th>
+                    <th>Cliente</th>
+                    <th>Detalle</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var turno in Model.Turnos)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => turno.FechaHorario)
+                        </td>
+                        <td>
+                            @if (turno.Mascota != null)
+                            {
+                                <strong>@turno.Mascota.Nombre</strong>
+                            }
+                            else
+                            {
+                                <span>(Sin Mascota Asignada)</span>
+                            }
+                        </td>
+                        <td>
+                            @if (turno.Mascota?.Cliente != null)
+                            {
+                                <span>@turno.Mascota.Cliente.Nombre @turno.Mascota.Cliente.Apellido</span>
+                            }
+                            else if (turno.Mascota != null)
+                            {
+                                <span>Cliente no disponible</span>
+                            }
+                            else
+                            {
+                                <span>(No aplica)</span>
+                            }
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => turno.Detalle)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>Este veterinario no tiene turnos asignados actualmente.</p>
+    }
+    <a asp-action="Index">Volver a Veterinarios</a>
 </div>

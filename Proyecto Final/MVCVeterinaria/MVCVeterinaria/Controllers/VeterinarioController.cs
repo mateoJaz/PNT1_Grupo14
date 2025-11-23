@@ -24,6 +24,24 @@ namespace MVCVeterinaria.Controllers
         {
             return View(await _context.Veterinario.ToListAsync());
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Index(string apellido, string matricula)
+        {
+            var query = _context.Veterinario.AsQueryable();
+
+            if (!string.IsNullOrEmpty(apellido))
+            {
+                query = query.Where(v => v.Apellido.Contains(apellido));
+            }
+            if (!string.IsNullOrEmpty(matricula))
+            {
+                query = query.Where(v => v.Matricula.Equals(matricula));
+            }
+            var veterinarios = await query.ToListAsync();
+
+            return View(veterinarios);
+        }
 
         // GET: Veterinario/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -32,9 +50,13 @@ namespace MVCVeterinaria.Controllers
             {
                 return NotFound();
             }
-
+            var fechaActual = DateTime.Now;
             var veterinario = await _context.Veterinario
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .Include(v => v.Turnos
+                    .Where(t => t.FechaHorario >= fechaActual).OrderBy(t => t.FechaHorario))
+                        .ThenInclude(t => t.Mascota)
+                            .ThenInclude(c => c.Cliente)
+                                .FirstOrDefaultAsync(m => m.Id == id);
             if (veterinario == null)
             {
                 return NotFound();

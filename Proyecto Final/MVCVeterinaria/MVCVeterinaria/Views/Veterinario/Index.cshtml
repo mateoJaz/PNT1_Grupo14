@@ -6,8 +6,31 @@
 
 <h1>Index</h1>
 
+
+<form asp-action="Index" class="container border p-3 bg-light" method="post">
+
+    <h3 class="mb-4">Filtrar Veterinarios</h3>
+
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label for="apellido" class="form-label">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" class="form-control" placeholder="Ingrese Apellido" />
+        </div>
+        <div class="col-md-6">
+            <label for="matricula" class="form-label">Matrícula:</label>
+            <input type="text" id="matricula" name="matricula" class="form-control" placeholder="Matrícula" />
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="d-flex justify-content-end gap-2">
+        <input type="reset" value="Borrar Filtros" class="btn btn-secondary" />
+        <input type="submit" value="Buscar" class="btn btn-primary" />
+    </div>
+</form>
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-primary">Registrar Veterinario</a>
 </p>
 <table class="table">
     <thead>
@@ -62,8 +85,8 @@
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                
             </td>
         </tr>
 }
