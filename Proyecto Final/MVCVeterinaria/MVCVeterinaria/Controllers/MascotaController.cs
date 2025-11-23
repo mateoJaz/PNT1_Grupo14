@@ -57,11 +57,17 @@ namespace MVCVeterinaria.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,ClienteId,Nombre,Especie,Raza,Edad,Peso")] Mascota mascota)
+        public async Task<IActionResult> Create([Bind("Id,ClienteId,Nombre,Especie,Raza,FechaNacimiento,Peso")] Mascota mascota)
         {   
             mascota.Vivo = true;
             ModelState.Remove("HistorialClinico");
             ModelState.Remove("Cliente");
+
+            if (mascota.FechaNacimiento > DateTime.Today)
+            {
+                ModelState.AddModelError("FechaNacimiento", "La fecha de nacimiento no puede ser mayor a la fecha actual.");
+            }
+
             if (ModelState.IsValid)
             {
                 _context.Add(mascota);
@@ -94,7 +100,7 @@ namespace MVCVeterinaria.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,ClienteId,Nombre,Especie,Raza,Edad,Peso,Vivo")] Mascota mascota)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,ClienteId,Nombre,Especie,Raza,FechaNacimiento,Peso,Vivo")] Mascota mascota)
         {
             if (id != mascota.Id)
             {
