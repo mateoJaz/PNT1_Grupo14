@@ -46,10 +46,44 @@ namespace MVCVeterinaria.Controllers
         }
 
         // GET: Evento/Create
-        public IActionResult Create()
+        // Ahora idMascota es obligatorio para entrar aquí
+        public async Task<IActionResult> Create(int? idMascota)
         {
-            ViewData["VeterinarioId"] = new SelectList(_context.Veterinario, "Id", "Id");
-            return View();
+            // 1. VALIDACIÓN: Si no hay mascota, no se puede crear evento.
+            if (idMascota == null)
+            {
+                // Lo mandamos a la lista de mascotas para que elija una
+                return RedirectToAction("Index", "Mascota");
+            }
+
+            // 2. Buscar el nombre de la mascota para mostrarlo en el título
+            var mascota = await _context.Mascota.FindAsync(idMascota);
+            if (mascota == null)
+            {
+                return NotFound(); // Si el ID no existe en la BD
+            }
+            ViewBag.NombreMascota = mascota.Nombre;
+
+            // 3. Preparar desplegable de Veterinarios (Concatenando Apellido y Nombre)
+            var veterinarios = _context.Veterinario.Select(v => new
+            {
+                Id = v.Id,
+                NombreCompleto = v.Apellido + ", " + v.Nombre
+            });
+            ViewData["VeterinarioId"] = new SelectList(veterinarios, "Id", "NombreCompleto");
+
+            // 4. Tipos de evento predefinidos
+            var listaTipos = new List<string> { "Consulta General", "Vacunación", "Cirugía", "Estudio", "Urgencia", "Control" };
+            ViewData["TiposEvento"] = new SelectList(listaTipos);
+
+            // 5. Preparar el Modelo con datos iniciales
+            var evento = new Evento
+            {
+                FechaHorario = DateTime.Now,
+                MascotaId = idMascota.Value // Fijamos el ID de la mascota
+            };
+
+            return View(evento);
         }
 
         // POST: Evento/Create

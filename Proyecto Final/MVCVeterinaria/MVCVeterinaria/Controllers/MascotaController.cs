@@ -29,18 +29,15 @@ namespace MVCVeterinaria.Controllers
         // GET: Mascota/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            if (id == null) return NotFound();
 
             var mascota = await _context.Mascota
                 .Include(m => m.Cliente)
+                // Traemos el historial y, dentro de cada evento, al veterinario que lo atendió
+                .Include(m => m.HistorialClinico).ThenInclude(e => e.Veterinario)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (mascota == null)
-            {
-                return NotFound();
-            }
+
+            if (mascota == null) return NotFound();
 
             return View(mascota);
         }

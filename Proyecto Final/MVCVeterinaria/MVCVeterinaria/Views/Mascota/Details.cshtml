@@ -1,60 +1,82 @@
 ﻿@model MVCVeterinaria.Models.Mascota
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Historia Clínica";
 }
 
-<h1>Details</h1>
+<h1>Historia Clínica</h1>
 
 <div>
-    <h4>Mascota</h4>
+    <h4>Ficha de @Model.Nombre</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Cliente)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Cliente.Id)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Nombre)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Especie)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Especie)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Raza)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Raza)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Edad)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Edad)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Peso)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Peso)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Vivo)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Vivo)
-        </dd>
+        <dt class="col-sm-2">Dueño</dt>
+        <dd class="col-sm-10">@Model.Cliente.Apellido, @Model.Cliente.Nombre</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Raza)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Raza)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Edad)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Edad) años</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Peso)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Peso) Kg</dd>
     </dl>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+
+<hr />
+<h3>Evoluciones y Tratamientos</h3>
+
+<table class="table table-bordered table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>Fecha</th>
+            <th>Tipo</th>
+            <th>Detalle / Diagnóstico</th>
+            <th>Veterinario</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.HistorialClinico != null && Model.HistorialClinico.Count > 0)
+        {
+            // Ordenamos para ver lo más reciente primero
+            foreach (var evento in Model.HistorialClinico.OrderByDescending(e => e.FechaHorario))
+            {
+                <tr>
+                    <td>@evento.FechaHorario.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td>@evento.TipoEvento</td>
+                    <td>@evento.Detalle</td>
+                    <td>
+                        @if (evento.Veterinario != null)
+                        {
+                            <span>Dr/a. @evento.Veterinario.Apellido</span>
+                        }
+                        else
+                        {
+                            <span>-</span>
+                        }
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="4" class="text-center text-muted">No hay registros médicos para esta mascota.</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="mt-4 mb-4">
+    <a asp-controller="Evento" asp-action="Create" asp-route-idMascota="@Model.Id" class="btn btn-success btn-lg">
+        + Agregar Nueva Evolución
+    </a>
+
+    <a asp-controller="Cliente"
+       asp-action="Details"
+       asp-route-id="@Model.ClienteId"
+       class="btn btn-outline-dark">
+        Volver al Cliente
+    </a>
 </div>

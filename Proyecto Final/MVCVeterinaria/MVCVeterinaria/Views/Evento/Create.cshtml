@@ -1,52 +1,74 @@
 ﻿@model MVCVeterinaria.Models.Evento
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Nuevo Tratamiento";
 }
 
-<h1>Create</h1>
-
-<h4>Evento</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+<div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+        <h4 class="mb-0">Nueva Evento para: <strong>@ViewBag.NombreMascota</strong></h4>
+    </div>
+    <div class="card-body">
         <form asp-action="Create">
             @Html.AntiForgeryToken()
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="TipoEvento" class="control-label"></label>
-                <input asp-for="TipoEvento" class="form-control" />
-                <span asp-validation-for="TipoEvento" class="text-danger"></span>
+
+            <input type="hidden" asp-for="MascotaId" />
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group mb-3">
+                        <label asp-for="FechaHorario" class="control-label font-weight-bold">Fecha y Hora</label>
+                        <input asp-for="FechaHorario" class="form-control" type="datetime-local"
+                               value="@Model.FechaHorario.ToString("yyyy-MM-ddTHH:mm")" />
+                        <span asp-validation-for="FechaHorario" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="VeterinarioId" class="control-label font-weight-bold">Veterinario a cargo</label>
+                        <select asp-for="VeterinarioId" class="form-control" asp-items="ViewBag.VeterinarioId">
+                            <option value="">-- Seleccione Profesional --</option>
+                        </select>
+                        <span asp-validation-for="VeterinarioId" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="TipoEvento" class="control-label font-weight-bold">Tipo de Evento</label>
+                        <select asp-for="TipoEvento" class="form-control" asp-items="ViewBag.TiposEvento">
+                            <option value="">-- Seleccione Tipo --</option>
+                        </select>
+                        <span asp-validation-for="TipoEvento" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group mb-3 h-100">
+                        <label asp-for="Detalle" class="control-label font-weight-bold">Diagnóstico / Observaciones</label>
+                        <textarea asp-for="Detalle" class="form-control" style="height: 200px;"
+                                  placeholder="Describa los síntomas, tratamiento aplicado y observaciones..."></textarea>
+                        <span asp-validation-for="Detalle" class="text-danger"></span>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Detalle" class="control-label"></label>
-                <input asp-for="Detalle" class="form-control" />
-                <span asp-validation-for="Detalle" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FechaHorario" class="control-label"></label>
-                <input asp-for="FechaHorario" class="form-control" />
-                <span asp-validation-for="FechaHorario" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="MascotaId" class="control-label"></label>
-                <select asp-for="MascotaId" class ="form-control" asp-items="ViewBag.MascotaId"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="VeterinarioId" class="control-label"></label>
-                <select asp-for="VeterinarioId" class ="form-control" asp-items="ViewBag.VeterinarioId"></select>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+
+            <hr />
+
+            <div class="form-group text-end">
+                <input type="submit" value="Guardar Historia Clínica" class="btn btn-success btn-lg" />
+
+                <a asp-controller="Mascota"
+                   asp-action="Details"
+                   asp-route-id="@Model.MascotaId"
+                   class="btn btn-secondary btn-lg">
+                    Volver al Historial
+                </a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

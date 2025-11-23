@@ -56,7 +56,12 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-controller="Cliente"
+       asp-action="Details"
+       asp-route-id="@Model.ClienteId"
+       class="btn btn-secondary">
+        Volver al Cliente
+    </a>
 </div>
 
 @section Scripts {
