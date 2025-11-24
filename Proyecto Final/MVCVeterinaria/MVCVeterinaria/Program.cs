@@ -13,6 +13,7 @@ namespace MVCVeterinaria
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddScoped<TurnoService>();
 
             var app = builder.Build();
 

@@ -43,10 +43,20 @@ namespace MVCVeterinaria.Controllers
         }
 
         // GET: Mascota/Create
-        public IActionResult Create(int idCliente)
+        public async Task<IActionResult> Create(int? clienteId)
         {
-            ViewData["ClienteId"] = new SelectList(_context.Clientes, "Id", "NombreCompleto");
-            return View();
+            if (clienteId == null)
+            {
+                return RedirectToAction("Index", "Clientes");
+            }
+            var cliente = await _context.Clientes.AsNoTracking().FirstOrDefaultAsync(c => c.Id == clienteId);
+            if (cliente == null)
+            {
+                return RedirectToAction("Index", "Clientes");
+            }
+            var mascota = new Mascota { ClienteId = cliente.Id};
+
+            return View(mascota);
         }
 
         // POST: Mascota/Create
@@ -54,8 +64,8 @@ namespace MVCVeterinaria.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,ClienteId,Nombre,Especie,Raza,FechaNacimiento,Peso")] Mascota mascota)
-        {   
+        public async Task<IActionResult> Create([Bind("Id,ClienteId, Nombre,Especie,Raza,FechaNacimiento,Peso")] Mascota mascota)
+        {
             mascota.Vivo = true;
             ModelState.Remove("HistorialClinico");
             ModelState.Remove("Cliente");
