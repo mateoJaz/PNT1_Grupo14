@@ -44,6 +44,23 @@
 
 
                     </ul>
+                    <ul class="navbar-nav ms-auto">
+                        @if (User.Identity?.IsAuthenticated == true)
+                        {
+                            <li class="nav-item ms-auto">
+                                <span class="navbar-text text-dark fw-bold me-3">Hola, @User.Identity?.Name</span>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link btn btn-danger text-white btn-sm" asp-controller="Acceso" asp-action="Salir">Cerrar Sesión</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Acceso" asp-action="Login">Iniciar Sesión</a>
+                            </li>
+                        }
+                    </ul>
                 </div>
             </div>
         </nav>
