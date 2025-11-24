@@ -1,8 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MVCVeterinaria.Models
 {
+    [Index(nameof(Email), IsUnique = true)]
     public class Usuario
     {
         [Key]
@@ -17,6 +19,8 @@ namespace MVCVeterinaria.Models
         [DataType(DataType.Password)]
         public string? Clave { get; set; }
 
+        [Required(ErrorMessage = "El nombre es obligatorio")]
+        [StringLength(50, ErrorMessage = "El nombre no puede superar los 50 caracteres")]
         public string? Nombre { get; set; }
     }
 }

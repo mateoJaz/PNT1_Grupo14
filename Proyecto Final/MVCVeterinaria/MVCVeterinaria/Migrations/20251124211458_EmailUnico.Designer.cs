@@ -4,6 +4,7 @@ using MVCVeterinaria.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MVCVeterinaria.Migrations
 {
     [DbContext(typeof(VeterinariaDatabaseContext))]
-    partial class VeterinariaDatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20251124211458_EmailUnico")]
+    partial class EmailUnico
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -182,9 +185,7 @@ namespace MVCVeterinaria.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Nombre")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

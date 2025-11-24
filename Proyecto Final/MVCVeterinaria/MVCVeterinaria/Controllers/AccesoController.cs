@@ -23,10 +23,27 @@ namespace MVCVeterinaria.Controllers
             return View();
         }
 
-        // 1. REGISTRO (POST)
         [HttpPost]
         public async Task<IActionResult> Registrar(Usuario usuario)
         {
+            // Verificamos si ya existe el Email
+            bool existeEmail = await _context.Usuarios.AnyAsync(u => u.Email == usuario.Email);
+            if (existeEmail)
+            {
+                ModelState.AddModelError("Email", "Este correo ya está registrado por otro usuario.");
+            }
+
+            // Verificamos si ya existe el Nombre
+            if (usuario.Nombre != null)
+            {
+                bool existeNombre = await _context.Usuarios.AnyAsync(u => u.Nombre == usuario.Nombre);
+                if (existeNombre)
+                {
+                    ModelState.AddModelError("Nombre", "Este nombre de usuario ya está en uso.");
+                }
+            }
+
+            // SI PASA LAS VALIDACIONES, GUARDAMOS
             if (ModelState.IsValid)
             {
                 _context.Usuarios.Add(usuario);
