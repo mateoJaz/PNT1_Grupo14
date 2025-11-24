@@ -41,6 +41,6 @@ namespace MVCVeterinaria.Models
 
 
         public List<Evento> HistorialClinico { get; set; }
-
+        public List<Turno> Turnos { get; set; }
     }
 }
