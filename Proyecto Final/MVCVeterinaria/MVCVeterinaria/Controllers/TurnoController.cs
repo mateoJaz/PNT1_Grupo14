@@ -3,15 +3,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MVCVeterinaria.Context;
 using MVCVeterinaria.Models;
-<<<<<<< HEAD
 using MVCVeterinaria.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-=======
 using Microsoft.AspNetCore.Authorization;
->>>>>>> 2bdc282c744e5f1923a30e3416e92e540fbeaeed
 
 namespace MVCVeterinaria.Controllers
 {
