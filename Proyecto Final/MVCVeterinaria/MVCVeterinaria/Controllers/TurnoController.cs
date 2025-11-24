@@ -1,22 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MVCVeterinaria.Context;
 using MVCVeterinaria.Models;
+using MVCVeterinaria.ViewModels;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace MVCVeterinaria.Controllers
 {
     public class TurnoController : Controller
     {
         private readonly VeterinariaDatabaseContext _context;
+        private readonly TurnoService _turnoService;
 
-        public TurnoController(VeterinariaDatabaseContext context)
+        public TurnoController(VeterinariaDatabaseContext context, TurnoService turnoService)
         {
             _context = context;
+            _turnoService = turnoService;
         }
 
         // GET: Turno
@@ -47,11 +50,26 @@ namespace MVCVeterinaria.Controllers
         }
 
         // GET: Turno/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create(int? mascotaId)
         {
-            ViewData["MascotaId"] = new SelectList(_context.Mascota, "Id", "Id");
-            ViewData["VeterinarioId"] = new SelectList(_context.Veterinario, "Id", "Id");
-            return View();
+
+            if (mascotaId == null)
+            {
+
+                return RedirectToAction("Index", "Cliente");
+            }
+
+
+            bool mascotaExiste = await _context.Mascota.AnyAsync(m => m.Id == mascotaId.Value);
+
+            if (!mascotaExiste)
+            {
+                return RedirectToAction("Index", "Cliente");
+            }
+
+            var model = new TurnoSearchViewModel { MascotaId = mascotaId.Value };
+
+            return View(model);
         }
 
         // POST: Turno/Create
@@ -167,6 +185,24 @@ namespace MVCVeterinaria.Controllers
         private bool TurnoExists(int id)
         {
             return _context.Turno.Any(e => e.Id == id);
+        }
+        [HttpPost]
+        [HttpPost]
+        public async Task<IActionResult> SearchAvailability(TurnoSearchViewModel model)
+        {
+            if (model.FechaInicio.HasValue && model.FechaFin.HasValue)
+            {
+                // La variable "_turnoService" llama al método "EncontrarTurnosDisponibles"
+                var disponibles = await _turnoService.EncontrarTurnosDisponibles(
+                    model.FechaInicio.Value,
+                    model.FechaFin.Value);
+
+                model.TurnosDisponibles = disponibles;
+
+                return View("Create", model);
+            }
+
+            return View("Create", model);
         }
     }
 }

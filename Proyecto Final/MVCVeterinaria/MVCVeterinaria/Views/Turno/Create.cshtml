@@ -1,46 +1,183 @@
-﻿@model MVCVeterinaria.Models.Turno
+﻿@model MVCVeterinaria.ViewModels.TurnoSearchViewModel
+@using System.Linq
 
-@{
-    ViewData["Title"] = "Create";
-}
+<h1>Reservar Turno</h1>
 
-<h1>Create</h1>
-
-<h4>Turno</h4>
 <hr />
+
+<h4>Buscar Disponibilidad</h4>
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="col-md-6">
+        <form asp-action="SearchAvailability" method="post">
+            
+            <input type="hidden" asp-for="MascotaId" /> 
+
             <div class="form-group">
-                <label asp-for="MascotaId" class="control-label"></label>
-                <select asp-for="MascotaId" class ="form-control" asp-items="ViewBag.MascotaId"></select>
+                <label asp-for="FechaInicio" class="control-label">Fecha de Inicio</label>
+                <input asp-for="FechaInicio" type="date" class="form-control" required />
             </div>
             <div class="form-group">
-                <label asp-for="VeterinarioId" class="control-label"></label>
-                <select asp-for="VeterinarioId" class ="form-control" asp-items="ViewBag.VeterinarioId"></select>
+                <label asp-for="FechaFin" class="control-label">Fecha de Fin</label>
+                <input asp-for="FechaFin" type="date" class="form-control" required />
             </div>
-            <div class="form-group">
-                <label asp-for="FechaHorario" class="control-label"></label>
-                <input asp-for="FechaHorario" class="form-control" />
-                <span asp-validation-for="FechaHorario" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Detalle" class="control-label"></label>
-                <input asp-for="Detalle" class="form-control" />
-                <span asp-validation-for="Detalle" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+
+            <div class="form-group mt-3">
+                <input type="submit" value="Buscar Disponibilidad" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
+<hr/>
+
+@if (Model.TurnosDisponibles != null && Model.TurnosDisponibles.Any())
+{
+    <h2>Disponibilidad Encontrada</h2>
+
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="alert alert-info">
+                <strong>Paso 1:</strong> Por favor, ingresa el motivo de la consulta antes de elegir un horario.
+            </div>
+            <div class="form-group">
+                <label for="Detalle" class="control-label">Motivo de la Consulta (Detalle):</label>
+                <textarea id="DetalleMotivo" name="Detalle" class="form-control" rows="3" required></textarea>
+                <div class="text-danger mt-1" id="detalle-error" style="display:none;">Este campo es obligatorio para reservar.</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="availabilityMatrix">
+        @{
+            var disponibilidadAgrupadaPorDia = Model.TurnosDisponibles
+                .GroupBy(t => t.InicioSlot.Date)
+                .OrderBy(g => g.Key)
+                .ToList();
+            
+            var encabezadosVeterinarios = Model.EncabezadosVeterinarios; 
+        }
+
+        <table class="table table-striped table-bordered table-sm">
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    @foreach (var vet in encabezadosVeterinarios)
+                    {
+                        <th class="text-center">@vet.NombreCompleto</th>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var grupoDia in disponibilidadAgrupadaPorDia)
+                {
+                    <tr>
+                        <td>@grupoDia.Key.ToShortDateString() (@grupoDia.Key.DayOfWeek)</td>
+
+                        @foreach (var vetHeader in encabezadosVeterinarios)
+                        {
+                            
+                                var slotsDisponibles = grupoDia
+                                    .Where(t => t.VeterinarioId == vetHeader.VeterinarioId)
+                                    .OrderBy(t => t.InicioSlot.TimeOfDay)
+                                    .ToList();
+                            
+
+                            <td class="text-center">
+                                @if (slotsDisponibles.Any())
+                                {
+                                    @foreach (var slot in slotsDisponibles)
+                                    {
+                                        <button type="button" 
+                                                class="btn btn-sm btn-outline-success m-1 reserve-button" 
+                                                disabled="disabled"
+                                                data-mascota-id="@Model.MascotaId"
+                                                data-veterinario-id="@slot.VeterinarioId"
+                                                data-fechahorario="@slot.InicioSlot.ToString("o")"
+                                                onclick="submitReservation(this)">
+                                            @slot.InicioSlot.ToShortTimeString()
+                                        </button>
+                                    }
+                                }
+                                else
+                                {
+                                    <span class="text-muted small">N/A</span>
+                                }
+                            </td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else if (Model.FechaInicio.HasValue) 
+{
+    <p class="alert alert-warning">No se encontraron turnos disponibles en el rango seleccionado.</p>
+}
+
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Volver a la lista</a>
 </div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script>
+        function submitReservation(button) {
+            var detalle = $('#DetalleMotivo').val().trim();
+            
+            if (detalle === '') {
+                alert('Debe ingresar el motivo de la consulta.');
+                return;
+            }
+
+            var form = document.createElement('form');
+            form.method = 'POST';
+            form.action = '@Url.Action("CreaTE")'; 
+            
+            var data = {
+                'MascotaId': button.getAttribute('data-mascota-id'),
+                'VeterinarioId': button.getAttribute('data-veterinario-id'),
+                'FechaHorario': button.getAttribute('data-fechahorario'),
+                'Detalle': detalle
+            };
+
+            for (var key in data) {
+                var input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = key;
+                input.value = data[key];
+                form.appendChild(input);
+            }
+            
+            var token = $('input[name="__RequestVerificationToken"]').val();
+            if (token) {
+                var tokenInput = document.createElement('input');
+                tokenInput.type = 'hidden';
+                tokenInput.name = '__RequestVerificationToken';
+                tokenInput.value = token;
+                form.appendChild(tokenInput);
+            }
+
+            document.body.appendChild(form);
+            form.submit();
+        }
+
+        $(document).ready(function () {
+            var detalleInput = $('#DetalleMotivo');
+            var reserveButtons = $('.reserve-button');
+
+            function checkDetalle() {
+                var isFilled = detalleInput.val().trim().length > 0;
+                
+                reserveButtons.prop('disabled', !isFilled);
+
+                $('#detalle-error').toggle(!isFilled && reserveButtons.length > 0);
+            }
+
+            detalleInput.on('keyup change', checkDetalle);
+            
+            checkDetalle();
+        });
+    </script>
 }

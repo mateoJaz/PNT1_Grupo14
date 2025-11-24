@@ -104,6 +104,11 @@
                         @Html.DisplayFor(m => m.Mascotas[i].Vivo)
                     </td>
                     <td>
+                        <a asp-controller="Turno"
+                           asp-action="Create"
+                           asp-route-mascotaId="@Model.Mascotas[i].Id">
+                            Agendar Turno
+                        </a>|
                         <a asp-controller="Mascota" asp-action="Edit" asp-route-id="@Model.Mascotas[i].Id">Editar Mascota</a> |
                         <a asp-controller="Mascota" asp-action="Details" asp-route-id="@Model.Mascotas[i].Id">Detalles</a>
                     </td>
