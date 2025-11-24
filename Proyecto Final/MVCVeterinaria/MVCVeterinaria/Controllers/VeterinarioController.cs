@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MVCVeterinaria.Context;
 using MVCVeterinaria.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MVCVeterinaria.Controllers
 {
+    [Authorize]
     public class VeterinarioController : Controller
     {
         private readonly VeterinariaDatabaseContext _context;

@@ -9,9 +9,11 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MVCVeterinaria.Controllers
 {
+    [Authorize]
     public class ClienteController : Controller
     {
         private readonly VeterinariaDatabaseContext _context;

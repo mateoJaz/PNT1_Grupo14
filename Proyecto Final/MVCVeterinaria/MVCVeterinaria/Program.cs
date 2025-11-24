@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using MVCVeterinaria.Context;
 
@@ -10,6 +11,20 @@ namespace MVCVeterinaria
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.AddDbContext<VeterinariaDatabaseContext>(options => options.UseSqlServer(builder.Configuration["ConnectionString:VeterinariaDBConnection"]));
+
+            builder.Services.Configure<CookiePolicyOptions>(options =>
+            {
+                options.CheckConsentNeeded = context => true;
+                options.MinimumSameSitePolicy = SameSiteMode.Lax;
+            });
+
+            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(option =>
+                {
+                    option.LoginPath = "/Acceso/Login";
+                    option.ExpireTimeSpan = TimeSpan.FromMinutes(20);
+                    option.AccessDeniedPath = "/Acceso/Login";
+                });
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
@@ -28,13 +43,17 @@ namespace MVCVeterinaria
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+            app.UseCookiePolicy();
+
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Acceso}/{action=Login}/{id?}");
 
             app.Run();
         }

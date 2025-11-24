@@ -81,7 +81,6 @@ namespace MVCVeterinaria.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ClienteId"] = new SelectList(_context.Clientes, "Id", "NombreCompleto", mascota.ClienteId);
             return View(mascota);
         }
 
