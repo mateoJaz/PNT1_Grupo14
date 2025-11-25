@@ -57,65 +57,69 @@
 
 <div>
     <h4>Mascotas</h4>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Mascotas[0].Nombre)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Mascotas[0].Especie)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Mascotas[0].Raza)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Mascotas[0].Edad)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Mascotas[0].Peso)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Mascotas[0].Vivo)
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @for (int i = 0; i < Model.Mascotas.Count; i++)
-            {
+
+    @if (Model.Mascotas != null && Model.Mascotas.Count > 0)
+    {
+        <table class="table">
+            <thead>
                 <tr>
-                    <td>
-                        @Html.DisplayFor(m => m.Mascotas[i].Nombre)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(m => m.Mascotas[i].Especie)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(m => m.Mascotas[i].Raza)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(m => m.Mascotas[i].Edad)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(m => m.Mascotas[i].Peso)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(m => m.Mascotas[i].Vivo)
-                    </td>
-                    <td>
-                        <a asp-controller="Turno"
-                           asp-action="Create"
-                           asp-route-mascotaId="@Model.Mascotas[i].Id">
-                            Agendar Turno
-                        </a>|
-                        <a asp-controller="Mascota" asp-action="Edit" asp-route-id="@Model.Mascotas[i].Id">Editar Mascota</a> |
-                        <a asp-controller="Mascota" asp-action="Details" asp-route-id="@Model.Mascotas[i].Id">Historial Clinico</a>
-                    </td>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Mascotas[0].Nombre)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Mascotas[0].Especie)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Mascotas[0].Raza)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Mascotas[0].Edad)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Mascotas[0].Peso)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Mascotas[0].Vivo)
+                    </th>
+                    <th></th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Mascotas)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nombre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Especie)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Raza)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Edad)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Peso)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Vivo)
+                        </td>
+                        <td>
+                            <a asp-controller="Turno" asp-action="Create" asp-route-mascotaId="@item.Id" asp-route-clienteId="@Model.Id">Agendar Turno</a> |
+                            <a asp-controller="Mascota" asp-action="Edit" asp-route-id="@item.Id">Editar Mascota</a> |
+                            <a asp-controller="Mascota" asp-action="Details" asp-route-id="@item.Id">Historial Clinico</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p class="text-danger">El cliente no tiene mascotas asignadas.</p>
+    }
 </div>
 @{
     var todosLosTurnos = Model.Mascotas?
@@ -160,5 +164,5 @@
 }
 else
 {
-    <p class="text-info">No hay turnos pendientes para las mascotas de este cliente.</p>
+    <p class="text-danger">No hay turnos pendientes para las mascotas de este cliente.</p>
 }

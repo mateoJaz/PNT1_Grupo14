@@ -47,10 +47,12 @@
             @Html.DisplayFor(model => model.Direccion)
         </dd>
     </dl>
-    
+
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />
+
         <input type="submit" value="Eliminar" class="btn btn-danger" /> |
-        <a asp-action="Index">Volver al Cliente</a>
+
+        <a asp-action="Details" asp-route-id="@Model.Id" class="btn btn-secondary">Volver al Cliente</a>
     </form>
 </div>

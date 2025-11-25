@@ -131,7 +131,7 @@ namespace MVCVeterinaria.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Details), new { id = cliente.Id });
             }
             return View(cliente);
         }
@@ -156,19 +156,36 @@ namespace MVCVeterinaria.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var cliente = await _context.Clientes.FindAsync(id);
+            var cliente = await _context.Clientes
+                .Include(c => c.Mascotas)
+                    .ThenInclude(m => m.Turnos)
+                .Include(c => c.Mascotas)
+                    .ThenInclude(m => m.HistorialClinico)
+                .FirstOrDefaultAsync(m => m.Id == id);
+
             if (cliente != null)
             {
+                foreach (var mascota in cliente.Mascotas)
+                {
+                    if (mascota.Turnos != null && mascota.Turnos.Any())
+                    {
+                        _context.Turno.RemoveRange(mascota.Turnos);
+                    }
+
+                    if (mascota.HistorialClinico != null && mascota.HistorialClinico.Any())
+                    {
+                        _context.Evento.RemoveRange(mascota.HistorialClinico);
+                    }
+                }
+
+                _context.Mascota.RemoveRange(cliente.Mascotas);
+
                 _context.Clientes.Remove(cliente);
+
+                await _context.SaveChangesAsync();
             }
 
-            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
-        }
-
-        private bool ClienteExists(int id)
-        {
-            return _context.Clientes.Any(e => e.Id == id);
         }
     }
 }
