@@ -28,7 +28,6 @@ namespace MVCVeterinaria.Models
                 {
                     var hoy = DateTime.Today;
                     edad = hoy.Year - FechaNacimiento.Year;
-                    // Restamos un año si aún no cumplió años en la fecha actual
                     if (FechaNacimiento.Date > hoy.AddYears(-edad)) edad--;
                 }
 

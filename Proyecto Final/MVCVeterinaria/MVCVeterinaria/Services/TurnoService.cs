@@ -63,8 +63,8 @@ public class TurnoService
 
                         horaSlot = horaSlot.Add(TimeSpan.FromHours(DURACION_TURNO_HORAS));
                     }
-                } // Fin foreach Veterinario
-            } // Fin for Días
+                }
+            }
         }
         return disponibilidadTotal;
     }

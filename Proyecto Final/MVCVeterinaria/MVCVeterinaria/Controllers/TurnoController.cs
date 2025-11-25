@@ -23,15 +23,11 @@ namespace MVCVeterinaria.Controllers
             _context = context;
             _turnoService = turnoService;
         }
-
-        // GET: Turno
         public async Task<IActionResult> Index()
         {
             var veterinariaDatabaseContext = _context.Turno.Include(t => t.Mascota).Include(t => t.Veterinario);
             return View(await veterinariaDatabaseContext.ToListAsync());
         }
-
-        // GET: Turno/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -50,8 +46,6 @@ namespace MVCVeterinaria.Controllers
 
             return View(turno);
         }
-
-        // GET: Turno/Create
         public async Task<IActionResult> Create(int? mascotaId)
         {
 
@@ -74,9 +68,6 @@ namespace MVCVeterinaria.Controllers
             return View(model);
         }
 
-        // POST: Turno/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,MascotaId,VeterinarioId,FechaHorario,Detalle")] Turno turno)
@@ -92,8 +83,6 @@ namespace MVCVeterinaria.Controllers
             ViewData["VeterinarioId"] = new SelectList(_context.Veterinario, "Id", "Id", turno.VeterinarioId);
             return View(turno);
         }
-
-        // GET: Turno/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -111,9 +100,6 @@ namespace MVCVeterinaria.Controllers
             return View(turno);
         }
 
-        // POST: Turno/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,MascotaId,VeterinarioId,FechaHorario,Detalle")] Turno turno)
@@ -148,8 +134,6 @@ namespace MVCVeterinaria.Controllers
             ViewData["VeterinarioId"] = new SelectList(_context.Veterinario, "Id", "Id", turno.VeterinarioId);
             return View(turno);
         }
-
-        // GET: Turno/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -169,7 +153,6 @@ namespace MVCVeterinaria.Controllers
             return View(turno);
         }
 
-        // POST: Turno/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -194,7 +177,6 @@ namespace MVCVeterinaria.Controllers
         {
             if (model.FechaInicio.HasValue && model.FechaFin.HasValue)
             {
-                // La variable "_turnoService" llama al método "EncontrarTurnosDisponibles"
                 var disponibles = await _turnoService.EncontrarTurnosDisponibles(
                     model.FechaInicio.Value,
                     model.FechaFin.Value);

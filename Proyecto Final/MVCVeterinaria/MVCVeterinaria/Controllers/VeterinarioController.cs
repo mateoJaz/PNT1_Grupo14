@@ -20,8 +20,6 @@ namespace MVCVeterinaria.Controllers
         {
             _context = context;
         }
-
-        // GET: Veterinario
         public async Task<IActionResult> Index()
         {
             return View(await _context.Veterinario.ToListAsync());
@@ -44,8 +42,6 @@ namespace MVCVeterinaria.Controllers
 
             return View(veterinarios);
         }
-
-        // GET: Veterinario/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -66,16 +62,11 @@ namespace MVCVeterinaria.Controllers
 
             return View(veterinario);
         }
-
-        // GET: Veterinario/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Veterinario/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,DNI,Nombre,Apellido,Matricula,Telefono,Direccion,Especialidad")] Veterinario veterinario)
@@ -88,8 +79,6 @@ namespace MVCVeterinaria.Controllers
             }
             return View(veterinario);
         }
-
-        // GET: Veterinario/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -105,9 +94,6 @@ namespace MVCVeterinaria.Controllers
             return View(veterinario);
         }
 
-        // POST: Veterinario/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,DNI,Nombre,Apellido,Matricula,Telefono,Direccion,Especialidad")] Veterinario veterinario)
@@ -139,8 +125,6 @@ namespace MVCVeterinaria.Controllers
             }
             return View(veterinario);
         }
-
-        // GET: Veterinario/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -158,7 +142,6 @@ namespace MVCVeterinaria.Controllers
             return View(veterinario);
         }
 
-        // POST: Veterinario/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

@@ -39,7 +39,6 @@
     <tbody>
         @if (Model.HistorialClinico != null && Model.HistorialClinico.Count > 0)
         {
-            // Ordenamos para ver lo más reciente primero
             foreach (var evento in Model.HistorialClinico.OrderByDescending(e => e.FechaHorario))
             {
                 <tr>

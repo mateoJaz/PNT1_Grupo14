@@ -20,15 +20,11 @@ namespace MVCVeterinaria.Controllers
         {
             _context = context;
         }
-
-        // GET: Evento
         public async Task<IActionResult> Index()
         {
             var veterinariaDatabaseContext = _context.Evento.Include(e => e.Veterinario);
             return View(await veterinariaDatabaseContext.ToListAsync());
         }
-
-        // GET: Evento/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -46,27 +42,20 @@ namespace MVCVeterinaria.Controllers
 
             return View(evento);
         }
-
-        // GET: Evento/Create
-        // Ahora idMascota es obligatorio para entrar aquí
         public async Task<IActionResult> Create(int? idMascota)
         {
-            // 1. VALIDACIÓN: Si no hay mascota, no se puede crear evento.
             if (idMascota == null)
             {
-                // Lo mandamos a la lista de mascotas para que elija una
                 return RedirectToAction("Index", "Mascota");
             }
 
-            // 2. Buscar el nombre de la mascota para mostrarlo en el título
             var mascota = await _context.Mascota.FindAsync(idMascota);
             if (mascota == null)
             {
-                return NotFound(); // Si el ID no existe en la BD
+                return NotFound();
             }
             ViewBag.NombreMascota = mascota.Nombre;
 
-            // 3. Preparar desplegable de Veterinarios (Concatenando Apellido y Nombre)
             var veterinarios = _context.Veterinario.Select(v => new
             {
                 Id = v.Id,
@@ -74,23 +63,18 @@ namespace MVCVeterinaria.Controllers
             });
             ViewData["VeterinarioId"] = new SelectList(veterinarios, "Id", "NombreCompleto");
 
-            // 4. Tipos de evento predefinidos
             var listaTipos = new List<string> { "Consulta General", "Vacunación", "Cirugía", "Estudio", "Urgencia", "Control" };
             ViewData["TiposEvento"] = new SelectList(listaTipos);
 
-            // 5. Preparar el Modelo con datos iniciales
             var evento = new Evento
             {
                 FechaHorario = DateTime.Now,
-                MascotaId = idMascota.Value // Fijamos el ID de la mascota
+                MascotaId = idMascota.Value
             };
 
             return View(evento);
         }
 
-        // POST: Evento/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,TipoEvento,Detalle,FechaHorario,MascotaId,VeterinarioId")] Evento evento)
@@ -104,8 +88,6 @@ namespace MVCVeterinaria.Controllers
             ViewData["VeterinarioId"] = new SelectList(_context.Veterinario, "Id", "Id", evento.VeterinarioId);
             return View(evento);
         }
-
-        // GET: Evento/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -122,9 +104,6 @@ namespace MVCVeterinaria.Controllers
             return View(evento);
         }
 
-        // POST: Evento/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,TipoEvento,Detalle,FechaHorario,MascotaId,VeterinarioId")] Evento evento)
@@ -157,8 +136,6 @@ namespace MVCVeterinaria.Controllers
             ViewData["VeterinarioId"] = new SelectList(_context.Veterinario, "Id", "Id", evento.VeterinarioId);
             return View(evento);
         }
-
-        // GET: Evento/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -177,7 +154,6 @@ namespace MVCVeterinaria.Controllers
             return View(evento);
         }
 
-        // POST: Evento/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
