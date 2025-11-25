@@ -83,13 +83,22 @@ namespace MVCVeterinaria.Controllers
         public async Task<IActionResult> Create([Bind("Id,MascotaId,VeterinarioId,FechaHorario,Detalle")] Turno turno)
         {
             ModelState.Remove("Turnos");
+            ModelState.Remove("Mascota");
+            ModelState.Remove("Veterinario");
+            ModelState.Remove("Cliente");
+
             if (ModelState.IsValid)
             {
                 _context.Add(turno);
                 await _context.SaveChangesAsync();
+                var mascota = await _context.Mascota.FindAsync(turno.MascotaId);
+                if (mascota != null)
+                {
+                    return RedirectToAction("Details", "Cliente", new { id = mascota.ClienteId });
+                }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["MascotaId"] = new SelectList(_context.Mascota, "Id", "Id", turno.MascotaId);
+            ViewData["MascotaId"] = new SelectList(_context.Mascota, "Id", "Nombre", turno.MascotaId);
             ViewData["VeterinarioId"] = new SelectList(_context.Veterinario, "Id", "Id", turno.VeterinarioId);
             return View(turno);
         }

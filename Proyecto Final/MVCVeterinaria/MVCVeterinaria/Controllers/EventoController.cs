@@ -79,11 +79,13 @@ namespace MVCVeterinaria.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,TipoEvento,Detalle,FechaHorario,MascotaId,VeterinarioId")] Evento evento)
         {
+            ModelState.Remove("Mascota");
+            ModelState.Remove("Veterinario");
             if (ModelState.IsValid)
             {
                 _context.Add(evento);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Details", "Mascota", new { id = evento.MascotaId });
             }
             ViewData["VeterinarioId"] = new SelectList(_context.Veterinario, "Id", "Id", evento.VeterinarioId);
             return View(evento);

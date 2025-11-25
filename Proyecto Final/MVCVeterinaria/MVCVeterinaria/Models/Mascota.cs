@@ -10,8 +10,11 @@ namespace MVCVeterinaria.Models
         public int Id { get; set; }
         public int ClienteId { get; set; }
         public Cliente Cliente { get; set; }
+        [Required(ErrorMessage = "El nombre de la mascota es obligatorio.")]
         public string Nombre { get; set; }
+        [Required(ErrorMessage = "La especie es obligatoria.")]
         public string Especie { get; set; }
+        [Required(ErrorMessage = "La raza es obligatoria.")]
         public string Raza { get; set; }
 
         [Required(ErrorMessage = "La fecha de nacimiento es obligatoria")]
@@ -34,6 +37,7 @@ namespace MVCVeterinaria.Models
                 return edad;
             }
         }
+        [Required(ErrorMessage = "El peso es obligatorio.")]
         public double Peso { get; set; }
         public bool Vivo { get; set; } = true;
 
