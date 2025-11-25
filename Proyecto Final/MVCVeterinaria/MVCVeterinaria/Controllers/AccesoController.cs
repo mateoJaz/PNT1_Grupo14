@@ -16,8 +16,6 @@ namespace MVCVeterinaria.Controllers
         {
             _context = context;
         }
-
-        // 1. REGISTRO (GET)
         public IActionResult Registrar()
         {
             return View();
@@ -26,14 +24,12 @@ namespace MVCVeterinaria.Controllers
         [HttpPost]
         public async Task<IActionResult> Registrar(Usuario usuario)
         {
-            // Verificamos si ya existe el Email
             bool existeEmail = await _context.Usuarios.AnyAsync(u => u.Email == usuario.Email);
             if (existeEmail)
             {
                 ModelState.AddModelError("Email", "Este correo ya está registrado por otro usuario.");
             }
 
-            // Verificamos si ya existe el Nombre
             if (usuario.Nombre != null)
             {
                 bool existeNombre = await _context.Usuarios.AnyAsync(u => u.Nombre == usuario.Nombre);
@@ -43,7 +39,6 @@ namespace MVCVeterinaria.Controllers
                 }
             }
 
-            // SI PASA LAS VALIDACIONES, GUARDAMOS
             if (ModelState.IsValid)
             {
                 _context.Usuarios.Add(usuario);
@@ -52,14 +47,11 @@ namespace MVCVeterinaria.Controllers
             }
             return View(usuario);
         }
-
-        // 2. LOGIN (GET)
         public IActionResult Login()
         {
             return View();
         }
 
-        // 2. LOGIN (POST)
         [HttpPost]
         public async Task<IActionResult> Login(Usuario usuario)
         {
@@ -78,7 +70,7 @@ namespace MVCVeterinaria.Controllers
 
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
 
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Cliente");
             }
             else
             {
@@ -86,8 +78,6 @@ namespace MVCVeterinaria.Controllers
                 return View();
             }
         }
-
-        // 3. SALIR
         public async Task<IActionResult> Salir()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);

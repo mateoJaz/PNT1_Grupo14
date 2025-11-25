@@ -4,7 +4,7 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h1>Datos Personales</h1>
 
 <div>
     <h4>Cliente</h4>
@@ -49,9 +49,9 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Editar Datos Personales</a> |
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Editar Datos</a> |
     <a asp-controller="Mascota" asp-action="Create" asp-route-clienteId="@Model.Id">Agregar Mascota</a>|
-    <a asp-action="Index">Volver A Clientes</a>
+    <a asp-action="Index">Volver a Inicio</a>
 </div>
 
 
@@ -110,7 +110,7 @@
                             Agendar Turno
                         </a>|
                         <a asp-controller="Mascota" asp-action="Edit" asp-route-id="@Model.Mascotas[i].Id">Editar Mascota</a> |
-                        <a asp-controller="Mascota" asp-action="Details" asp-route-id="@Model.Mascotas[i].Id">Detalles</a>
+                        <a asp-controller="Mascota" asp-action="Details" asp-route-id="@Model.Mascotas[i].Id">Historial Clinico</a>
                     </td>
                 </tr>
             }
