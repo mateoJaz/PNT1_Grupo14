@@ -187,5 +187,9 @@ namespace MVCVeterinaria.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+        private bool ClienteExists(int id)
+        {
+            return _context.Clientes.Any(e => e.Id == id);
+        }
     }
 }

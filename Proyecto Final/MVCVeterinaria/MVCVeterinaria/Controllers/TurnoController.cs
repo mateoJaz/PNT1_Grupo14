@@ -46,24 +46,34 @@ namespace MVCVeterinaria.Controllers
 
             return View(turno);
         }
-        public async Task<IActionResult> Create(int? mascotaId)
+        public async Task<IActionResult> Create(int? mascotaId, int? clienteId)
         {
-
-            if (mascotaId == null)
-            {
-
-                return RedirectToAction("Index", "Cliente");
-            }
-
-
-            bool mascotaExiste = await _context.Mascota.AnyAsync(m => m.Id == mascotaId.Value);
-
-            if (!mascotaExiste)
+            if (mascotaId == null || clienteId == null)
             {
                 return RedirectToAction("Index", "Cliente");
             }
 
-            var model = new TurnoSearchViewModel { MascotaId = mascotaId.Value };
+            var mascota = await _context.Mascota.FindAsync(mascotaId);
+
+            if (mascota == null)
+            {
+                return NotFound();
+            }
+
+            if (!mascota.Vivo)
+            {
+                TempData["MensajeError"] = "No se pueden agendar turnos para una mascota fallecida.";
+                return RedirectToAction("Details", "Cliente", new { id = clienteId });
+            }
+
+            var model = new TurnoSearchViewModel
+            {
+                MascotaId = mascotaId.Value,
+                ClienteId = clienteId.Value,
+                NombreMascota = mascota.Nombre,
+                FechaInicio = DateTime.Today,
+                FechaFin = DateTime.Today.AddDays(7)
+            };
 
             return View(model);
         }

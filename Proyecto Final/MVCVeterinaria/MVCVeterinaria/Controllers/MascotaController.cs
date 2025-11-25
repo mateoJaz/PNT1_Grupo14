@@ -47,8 +47,11 @@ namespace MVCVeterinaria.Controllers
             {
                 return RedirectToAction("Index", "Clientes");
             }
-            var mascota = new Mascota { ClienteId = cliente.Id};
-
+            var mascota = new Mascota
+            {
+                ClienteId = cliente.Id,
+                FechaNacimiento = new DateTime(1980, 1, 1)
+            };
             return View(mascota);
         }
 
@@ -59,6 +62,7 @@ namespace MVCVeterinaria.Controllers
             mascota.Vivo = true;
             ModelState.Remove("HistorialClinico");
             ModelState.Remove("Cliente");
+            ModelState.Remove("Turnos");
 
             if (mascota.FechaNacimiento > DateTime.Today)
             {
@@ -69,21 +73,21 @@ namespace MVCVeterinaria.Controllers
             {
                 _context.Add(mascota);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Details", "Cliente", new { id = mascota.ClienteId });
             }
             return View(mascota);
         }
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            if (id == null) return NotFound();
 
             var mascota = await _context.Mascota.FindAsync(id);
-            if (mascota == null)
+            if (mascota == null) return NotFound();
+
+            if (!mascota.Vivo)
             {
-                return NotFound();
+                TempData["MensajeError"] = "No se puede editar una mascota fallecida.";
+                return RedirectToAction("Details", "Cliente", new { id = mascota.ClienteId });
             }
             ViewData["ClienteId"] = new SelectList(_context.Clientes, "Id", "NombreCompleto", mascota.ClienteId);
             return View(mascota);
@@ -99,6 +103,7 @@ namespace MVCVeterinaria.Controllers
             }
             ModelState.Remove("HistorialClinico");
             ModelState.Remove("Cliente");
+            ModelState.Remove("Turnos");
 
             if (ModelState.IsValid)
             {
@@ -118,7 +123,7 @@ namespace MVCVeterinaria.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Details", "Cliente", new { id = mascota.ClienteId });
             }
             ViewData["ClienteId"] = new SelectList(_context.Clientes, "Id", "NombreCompleto", mascota.ClienteId);
             return View(mascota);
@@ -129,15 +134,12 @@ namespace MVCVeterinaria.Controllers
             {
                 return NotFound();
             }
-
-            var mascota = await _context.Mascota
-                .Include(m => m.Cliente)
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (mascota == null)
+            var mascota = await _context.Mascota.Include(m => m.Cliente).FirstOrDefaultAsync(m => m.Id == id);
+            if (!mascota.Vivo)
             {
-                return NotFound();
+                TempData["MensajeError"] = "Esta mascota ya figura como fallecida.";
+                return RedirectToAction("Details", "Cliente", new { id = mascota.ClienteId });
             }
-
             return View(mascota);
         }
 
@@ -146,15 +148,19 @@ namespace MVCVeterinaria.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var mascota = await _context.Mascota.FindAsync(id);
+
             if (mascota != null)
             {
-                _context.Mascota.Remove(mascota);
+                mascota.Vivo = false;
+                _context.Mascota.Update(mascota);
+
+                await _context.SaveChangesAsync();
+
+                return RedirectToAction("Details", "Cliente", new { id = mascota.ClienteId });
             }
 
-            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-
         private bool MascotaExists(int id)
         {
             return _context.Mascota.Any(e => e.Id == id);

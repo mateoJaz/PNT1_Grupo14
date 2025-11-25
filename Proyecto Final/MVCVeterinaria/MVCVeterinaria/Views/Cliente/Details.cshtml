@@ -107,9 +107,31 @@
                             @Html.DisplayFor(modelItem => item.Vivo)
                         </td>
                         <td>
-                            <a asp-controller="Turno" asp-action="Create" asp-route-mascotaId="@item.Id" asp-route-clienteId="@Model.Id">Agendar Turno</a> |
-                            <a asp-controller="Mascota" asp-action="Edit" asp-route-id="@item.Id">Editar Mascota</a> |
-                            <a asp-controller="Mascota" asp-action="Details" asp-route-id="@item.Id">Historial Clinico</a>
+                            @if (item.Vivo)
+                            {
+                                <a asp-controller="Turno"
+                                   asp-action="Create"
+                                   asp-route-mascotaId="@item.Id"
+                                   asp-route-clienteId="@Model.Id">Agendar Turno</a>
+                                <span> | </span>
+
+                                <a asp-controller="Mascota"
+                                   asp-action="Edit"
+                                   asp-route-id="@item.Id">Editar</a>
+                                <span> | </span>
+                            }
+
+                            <a asp-controller="Mascota"
+                               asp-action="Details"
+                               asp-route-id="@item.Id">Historial Clinico</a>
+
+                            @if (item.Vivo)
+                            {
+                                <span> | </span>
+                                <a asp-controller="Mascota"
+                                   asp-action="Delete"
+                                   asp-route-id="@item.Id">Fallecimiento</a>
+                            }
                         </td>
                     </tr>
                 }
