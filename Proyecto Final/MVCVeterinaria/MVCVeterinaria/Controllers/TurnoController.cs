@@ -194,6 +194,13 @@ namespace MVCVeterinaria.Controllers
         [HttpPost]
         public async Task<IActionResult> SearchAvailability(TurnoSearchViewModel model)
         {
+            if (model.FechaInicio > model.FechaFin)
+            {
+                ModelState.AddModelError("", "La fecha de inicio no puede ser posterior a la fecha de fin.");
+
+                return View("Create", model);
+            }
+
             if (model.FechaInicio.HasValue && model.FechaFin.HasValue)
             {
                 var disponibles = await _turnoService.EncontrarTurnosDisponibles(
