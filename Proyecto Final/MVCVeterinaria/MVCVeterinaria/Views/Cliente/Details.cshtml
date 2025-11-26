@@ -114,20 +114,22 @@
                                    asp-route-mascotaId="@item.Id"
                                    asp-route-clienteId="@Model.Id">Agendar Turno</a>
                                 <span> | </span>
-
-                                <a asp-controller="Mascota"
-                                   asp-action="Edit"
-                                   asp-route-id="@item.Id">Editar</a>
-                                <span> | </span>
                             }
 
                             <a asp-controller="Mascota"
                                asp-action="Details"
-                               asp-route-id="@item.Id">Historial Clinico</a>
+                               asp-route-id="@item.Id">Historia Clínica</a>
 
                             @if (item.Vivo)
                             {
                                 <span> | </span>
+
+                                <a asp-controller="Mascota"
+                                   asp-action="Edit"
+                                   asp-route-id="@item.Id">Editar</a>
+
+                                <span> | </span>
+
                                 <a asp-controller="Mascota"
                                    asp-action="Delete"
                                    asp-route-id="@item.Id">Fallecimiento</a>
@@ -163,6 +165,7 @@
                 <th>Mascota</th>
                 <th>Veterinario</th>
                 <th>Detalle</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -178,6 +181,11 @@
                     </td>
                     <td>
                         @Html.DisplayFor(t => turno.Detalle)
+                    </td>
+                    <td>
+                        <a asp-controller="Turno"
+                           asp-action="Delete"
+                           asp-route-id="@turno.Id">Cancelar Turno</a>
                     </td>
                 </tr>
             }

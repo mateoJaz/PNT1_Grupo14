@@ -176,14 +176,18 @@ namespace MVCVeterinaria.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var turno = await _context.Turno.FindAsync(id);
+            var turno = await _context.Turno
+                    .Include(t => t.Mascota)
+                    .FirstOrDefaultAsync(t => t.Id == id);
+
             if (turno != null)
             {
+                int clienteId = turno.Mascota.ClienteId;
                 _context.Turno.Remove(turno);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Details", "Cliente", new { id = clienteId });
             }
-
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Index", "Cliente");
         }
 
         private bool TurnoExists(int id)
