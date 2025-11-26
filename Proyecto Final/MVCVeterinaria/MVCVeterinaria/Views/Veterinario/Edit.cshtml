@@ -56,8 +56,8 @@
 </div>
 
 <div>
-    <a asp-action="Index">Volver a Veterinarios</a>
-    <a asp-action="Delete" asp-route-id="@Model.Id">Eliminar</a>
+    <div><a asp-action="Index" class="btn btn-secondary">Volver a Veterinarios</a></div>
+    <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger">Eliminar</a>
 </div>
 
 @section Scripts {

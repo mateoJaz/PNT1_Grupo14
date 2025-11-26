@@ -4,8 +4,6 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Datos Personales</h1>
-
 <div>
     <h4>@Html.DisplayFor(model => model.Nombre) @Html.DisplayFor(model => model.Apellido)</h4>
     <hr />
@@ -43,7 +41,10 @@
     </dl>
 </div>
 <div>
-    <h2>Turnos Pendientes</h2>
+    <div class="d-flex justify-content-between align-items-center">
+        <h2>Turnos Pendientes</h2>
+        <a asp-action="Index" class="btn btn-primary">Volver a Veterinarios</a>
+    </div>
 
     @if (Model.Turnos != null && Model.Turnos.Any())
     {
@@ -106,5 +107,5 @@
     {
         <p>Este veterinario no tiene turnos asignados actualmente.</p>
     }
-    <a asp-action="Index" class="btn btn-primary">Volver a Veterinarios</a>
+    
 </div>

@@ -4,8 +4,6 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Datos Personales</h1>
-
 <div>
     <h4>@Html.DisplayFor(model => model.NombreCompleto)</h4>
     <hr />
@@ -86,7 +84,17 @@
                             @Html.DisplayFor(modelItem => item.Raza)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Edad)
+                            @{
+                                if (item.Edad == -1)
+                                {
+                                    @Html.Raw("Mascota Fallecida")
+                                }
+                                else
+                                {
+                                    @Html.DisplayFor(modelItem => item.Edad)
+                                    @Html.Raw(" año/s")
+                                }
+                            }
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.Peso)
