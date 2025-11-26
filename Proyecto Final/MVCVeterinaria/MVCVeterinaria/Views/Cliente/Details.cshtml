@@ -7,7 +7,7 @@
 <h1>Datos Personales</h1>
 
 <div>
-    <h4>Cliente</h4>
+    <h4>@Html.DisplayFor(model => model.NombreCompleto)</h4>
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
@@ -15,18 +15,6 @@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.DNI)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Nombre)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Apellido)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Apellido)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Email)
@@ -165,7 +153,7 @@
                 <th>Mascota</th>
                 <th>Veterinario</th>
                 <th>Detalle</th>
-                <th></th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -187,6 +175,7 @@
                            asp-action="Delete"
                            asp-route-id="@turno.Id">Cancelar Turno</a>
                     </td>
+
                 </tr>
             }
         </tbody>
