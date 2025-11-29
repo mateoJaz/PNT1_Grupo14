@@ -42,8 +42,8 @@
 </div>
 <div>
     <div class="d-flex justify-content-between align-items-center">
-        <h2>Turnos Pendientes</h2>
-        <a asp-action="Index" class="btn btn-primary">Volver a Veterinarios</a>
+        <h4>Turnos Pendientes</h4>
+        <a asp-action="Index" class="btn btn-secondary">Volver a Veterinarios</a>
     </div>
 
     @if (Model.Turnos != null && Model.Turnos.Any())
@@ -55,8 +55,6 @@
                     <th>Mascota</th>
                     <th>Cliente</th>
                     <th>Detalle</th>
-                    <th>Acciones</th>
-
                 </tr>
             </thead>
             <tbody>
@@ -92,11 +90,6 @@
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => turno.Detalle)
-                        </td>
-                        <td>
-                            <a asp-controller="Turno"
-                               asp-action="Delete"
-                               asp-route-id="@turno.Id">Cancelar Turno</a>
                         </td>
                     </tr>
                 }

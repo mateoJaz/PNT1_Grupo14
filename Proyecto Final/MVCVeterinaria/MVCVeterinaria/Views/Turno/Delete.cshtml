@@ -1,49 +1,75 @@
 ﻿@model MVCVeterinaria.Models.Turno
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Cancelar Turno";
 }
 
-<h1>Cancelar</h1>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
 
-<h3>¿Está seguro que desea cancelar este turno?</h3>
-<div>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Mascota)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Mascota.Id)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Veterinario)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Veterinario.Id)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FechaHorario)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.FechaHorario)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Detalle)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Detalle)
-        </dd>
-    </dl>
-    
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Cancelar" class="btn btn-danger" /> |
-        <a asp-controller="Cliente"
-           asp-action="Details"
-           asp-route-id="@Model.Mascota.ClienteId"
-           class="btn btn-secondary">
-            Volver al Cliente
-        </a>
-    </form>
+            <div class="card border-danger shadow-sm">
+
+                <div class="card-header-danger">
+                    <h3 class="mb-0">Cancelar Turno</h3>
+                </div>
+
+                <div class="card-body">
+
+                    <div class="alert alert-warning text-center">
+                        <strong>¿Está seguro que desea cancelar el siguiente turno?</strong>
+                        <br />
+                        <small>Esta acción eliminará el registro del turno pendiente.</small>
+                    </div>
+
+                    <dl class="row mt-4">
+                        <dt class="col-sm-4 text-end">
+                            Fecha y Hora:
+                        </dt>
+                        <dd class="col-sm-8 fw-bold">
+                            @Model.FechaHorario.ToString("dd/MM/yyyy HH:mm") hs
+                        </dd>
+
+                        <dt class="col-sm-4 text-end">
+                            Paciente:
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.Mascota.Nombre)
+                        </dd>
+
+                        <dt class="col-sm-4 text-end">
+                            Veterinario:
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Model.Veterinario.Apellido, @Model.Veterinario.Nombre
+                        </dd>
+
+                        <dt class="col-sm-4 text-end">
+                            Motivo:
+                        </dt>
+
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.Detalle)
+                        </dd>
+                    </dl>
+
+                    <hr />
+
+                    <form asp-action="Delete" class="d-flex justify-content-end gap-2">
+                        <input type="hidden" asp-for="Id" />
+
+                        <a asp-controller="Cliente"
+                           asp-action="Details"
+                           asp-route-id="@Model.Mascota.ClienteId"
+                           class="btn btn-secondary">
+                            Volver al Cliente
+                        </a>
+
+                        <input type="submit" value="Confirmar Cancelación" class="btn btn-danger" />
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </div>

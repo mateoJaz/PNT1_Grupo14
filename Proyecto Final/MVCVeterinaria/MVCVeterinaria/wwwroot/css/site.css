@@ -1,25 +1,90 @@
+:root {
+    --primary-color: #2E8B57;
+    --secondary-color: #20B2AA;
+    --accent-color: #FF6B6B;
+    --text-dark: #333333;
+    --text-light: #ffffff;
+    --background-light: #f8f9fa;
+    --table-header-bg: #2E8B57;
+}
+
 html {
-  font-size: 14px;
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
+    html {
+        font-size: 16px;
+    }
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-light);
+    color: var(--text-dark);
 }
+
+h1, h2, h3, h4 {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid var(--secondary-color);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.75rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem var(--secondary-color);
+    border-color: var(--primary-color);
+}
+
+.btn {
+    border-radius: 20px;
+    padding: 8px 20px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+    .btn-primary:hover {
+        background-color: #247046;
+        border-color: #247046;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+.btn-danger {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.form-control {
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -30,3 +95,96 @@ input[type="number"] {
     -moz-appearance: textfield;
     appearance: textfield;
 }
+
+.table {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 1rem;
+}
+
+    .table thead th {
+        background-color: var(--table-header-bg);
+        color: var(--text-light);
+        border: none;
+        padding: 15px;
+        font-weight: 500;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .table tbody td {
+        padding: 12px 15px;
+        vertical-align: middle;
+        border-bottom: 1px solid #eee;
+        color: #555;
+    }
+
+    .table tbody tr:hover {
+        background-color: #f1fdf7;
+        transform: scale(1.005);
+        transition: 0.2s;
+    }
+
+    .table a {
+        text-decoration: none;
+        font-weight: 600;
+        margin-right: 10px;
+    }
+
+
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.card-header {
+    background-color: var(--secondary-color) !important;
+    color: white !important;
+    font-weight: bold;
+    border-bottom: none;
+    padding: 15px 20px;
+}
+
+.card-header-danger {
+    background-color: #dc3545 !important;
+    color: white !important;
+    border-bottom: none;
+    padding: 15px 20px;
+}
+
+    .card-header-danger h1,
+    .card-header-danger h2,
+    .card-header-danger h3 {
+        color: white !important;
+        border-bottom: none !important;
+        margin-bottom: 0 !important;
+    }
+
+.custom-nav {
+    background-color: var(--primary-color);
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: white !important;
+}
+
+.nav-link {
+    color: rgba(255,255,255,0.9) !important;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+}
+
+    .nav-link:hover {
+        color: white !important;
+        text-shadow: 0 0 5px rgba(255,255,255,0.5);
+    }
