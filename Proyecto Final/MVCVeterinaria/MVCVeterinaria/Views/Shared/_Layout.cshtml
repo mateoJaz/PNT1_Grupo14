@@ -31,11 +31,11 @@
 
 
                     </ul>
-                    <ul class="navbar-nav ms-auto">
+                    <ul class="navbar-nav ms-auto align-items-center">
                         @if (User.Identity?.IsAuthenticated == true)
                         {
                             <li class="nav-item ms-auto">
-                                <span class="navbar-text text-dark fw-bold me-3">Hola, @User.Identity?.Name</span>
+                                <span class="navbar-text text-white fw-bold me-3">Hola, @User.Identity?.Name</span>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link btn btn-danger text-white btn-sm" asp-controller="Acceso" asp-action="Salir">Cerrar Sesión</a>

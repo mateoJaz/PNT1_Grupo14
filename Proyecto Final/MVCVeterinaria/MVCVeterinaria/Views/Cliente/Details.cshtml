@@ -5,7 +5,7 @@
 }
 
 <div>
-    <h4>@Html.DisplayFor(model => model.NombreCompleto)</h4>
+    <h3>@Html.DisplayFor(model => model.NombreCompleto)</h3>
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
@@ -35,8 +35,8 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Editar Datos</a> |
-    <a asp-controller="Mascota" asp-action="Create" asp-route-clienteId="@Model.Id">Agregar Mascota</a>|
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Editar Datos</a>
+    <a asp-controller="Mascota" asp-action="Create" asp-route-clienteId="@Model.Id">Agregar Mascota</a>
     <a asp-action="Index">Volver a Inicio</a>
 </div>
 

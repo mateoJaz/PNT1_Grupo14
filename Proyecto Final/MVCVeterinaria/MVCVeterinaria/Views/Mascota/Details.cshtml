@@ -7,7 +7,7 @@
 <h1>Historia Clínica</h1>
 
 <div>
-    <h4>Ficha de @Model.Nombre</h4>
+    <h3>Ficha de @Model.Nombre</h3>
     <hr />
     <dl class="row">
         <dt class="col-sm-2">Dueño</dt>
@@ -38,7 +38,7 @@
 </div>
 
 <hr />
-<h3>Eventos y Tratamientos</h3>
+<h4>Eventos y Tratamientos</h4>
 
 <table class="table table-bordered table-striped">
     <thead class="thead-dark">
@@ -80,15 +80,18 @@
     </tbody>
 </table>
 
-<div class="mt-4 mb-4">
-    <a asp-controller="Evento" asp-action="Create" asp-route-idMascota="@Model.Id" class="btn btn-success btn-lg">
+<div class="mt-4 mb-4 d-flex gap-2">
+    <a asp-controller="Evento"
+       asp-action="Create"
+       asp-route-idMascota="@Model.Id"
+       class="btn btn-success">
         Agregar Nuevo Evento
     </a>
 
     <a asp-controller="Cliente"
        asp-action="Details"
        asp-route-id="@Model.ClienteId"
-       class="btn btn-outline-dark">
+       class="btn btn-secondary">
         Volver al Cliente
     </a>
 </div>

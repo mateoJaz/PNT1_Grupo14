@@ -5,8 +5,10 @@
 }
 
 <div class="card shadow-sm">
-    <div class="card-header bg-primary text-white">
-        <h4 class="mb-0">Nueva Evento para: <strong>@ViewBag.NombreMascota</strong></h4>
+    <div class="card-header text-white">
+        <h4 class="mb-0" style="color: white !important; border-bottom: none;">
+            Nuevo Evento para: <strong>@ViewBag.NombreMascota</strong>
+        </h4>
     </div>
     <div class="card-body">
         <form asp-action="Create">
@@ -53,13 +55,13 @@
 
             <hr />
 
-            <div class="form-group text-end">
-                <input type="submit" value="Guardar Historia Clínica" class="btn btn-success btn-lg" />
+            <div class="form-group text-end mt-3">
+                <input type="submit" value="Guardar Historia Clínica" class="btn btn-success" />
 
                 <a asp-controller="Mascota"
                    asp-action="Details"
                    asp-route-id="@Model.MascotaId"
-                   class="btn btn-secondary btn-lg">
+                   class="btn btn-secondary">
                     Volver al Historial
                 </a>
             </div>
