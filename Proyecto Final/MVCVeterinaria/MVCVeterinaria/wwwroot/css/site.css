@@ -2,6 +2,7 @@
     --primary-color: #2E8B57;
     --secondary-color: #20B2AA;
     --accent-color: #FF6B6B;
+    --edit-color: #ff9f43;
     --text-dark: #333333;
     --text-light: #ffffff;
     --background-light: #f8f9fa;
@@ -116,7 +117,7 @@ input[type="number"] {
         border: none;
         padding: 15px;
         font-weight: 500;
-        text-align: center;
+        text-align: left;
         vertical-align: middle;
     }
 
@@ -191,4 +192,57 @@ input[type="number"] {
     .nav-link:hover {
         color: white !important;
         text-shadow: 0 0 5px rgba(255,255,255,0.5);
+    }
+
+.btn-mini {
+    background-color: white;
+    border: 1px solid #ced4da;
+    padding: 2px 10px;
+    font-size: inherit;
+    line-height: 1.5;
+    border-radius: 4px;
+    transition: all 0.2s;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-mini-celeste {
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+    .btn-mini-celeste:hover {
+        background-color: var(--secondary-color);
+        color: white;
+    }
+
+.btn-mini-editar {
+    color: var(--edit-color);
+    border-color: var(--edit-color);
+}
+
+    .btn-mini-editar:hover {
+        background-color: var(--edit-color);
+        color: white;
+    }
+
+.btn-mini-danger {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+    .btn-mini-danger:hover {
+        background-color: var(--accent-color);
+        color: white;
+    }
+
+.btn-mini-verde {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+    .btn-mini-verde:hover {
+        background-color: var(--primary-color);
+        color: white;
     }

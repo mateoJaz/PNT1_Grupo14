@@ -84,11 +84,23 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Especialidad)
             </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Datos y Turnos Pendientes</a>
-                
-            </td>
+                <td class="text-center">
+                    <div class="d-flex gap-2">
+
+                        <a asp-action="Details"
+                           asp-route-id="@item.Id"
+                           class="btn btn-sm btn-mini btn-mini-celeste">
+                            Datos y Turnos
+                        </a>
+
+                        <a asp-action="Edit"
+                           asp-route-id="@item.Id"
+                           class="btn btn-sm btn-mini btn-mini-editar">
+                            Editar
+                        </a>
+
+                    </div>
+                </td>
         </tr>
 }
     </tbody>

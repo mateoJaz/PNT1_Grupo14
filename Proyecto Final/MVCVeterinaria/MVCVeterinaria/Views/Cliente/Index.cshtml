@@ -53,7 +53,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Direccion)
             </th>
-            <th></th>
+            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -78,7 +78,11 @@
                 @Html.DisplayFor(modelItem => item.Direccion)
             </td>
             <td>
-                <a asp-action="Details" asp-route-id="@item.Id">Administrar Cliente</a>
+                    <a asp-action="Details"
+                       asp-route-id="@item.Id"
+                       class="btn btn-sm btn-mini btn-mini-celeste">
+                        Administrar Cliente
+                    </a>
             </td>
         </tr>
 }
