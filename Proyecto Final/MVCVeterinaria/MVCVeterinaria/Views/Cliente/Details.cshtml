@@ -4,40 +4,42 @@
     ViewData["Title"] = "Details";
 }
 
-<div>
-    <h3>@Html.DisplayFor(model => model.NombreCompleto)</h3>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DNI)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DNI)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Telefono)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Telefono)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Direccion)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Direccion)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Editar Datos</a>
-    <a asp-controller="Mascota" asp-action="Create" asp-route-clienteId="@Model.Id">Agregar Mascota</a>
-    <a asp-action="Index">Volver a Inicio</a>
+<h3 class="mb-3">@Html.DisplayFor(model => model.NombreCompleto)</h3>
+
+<div class="card bg-light mb-4 shadow-sm" style="max-width: 800px;">
+    <div class="card-body">
+
+        <dl class="row mb-0">
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DNI):</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DNI)</dd>
+
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Email):</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Email)</dd>
+
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Telefono):</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Telefono)</dd>
+
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Direccion):</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Direccion)</dd>
+        </dl>
+
+        <hr class="my-3" />
+
+        <div class="d-flex gap-2">
+
+            <a asp-controller="Mascota" asp-action="Create" asp-route-clienteId="@Model.Id" class="btn btn-success">
+                Agregar Mascota
+            </a>
+
+            <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-warning text-white">
+                Editar Datos
+            </a>
+
+            <a asp-action="Index" class="btn btn-secondary">
+                Volver a Inicio
+            </a>
+        </div>
+    </div>
 </div>
 
 

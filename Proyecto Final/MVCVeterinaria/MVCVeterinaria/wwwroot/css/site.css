@@ -246,3 +246,32 @@ input[type="number"] {
         background-color: var(--primary-color);
         color: white;
     }
+
+.card-header-edit {
+    background-color: var(--edit-color) !important;
+    color: white !important;
+    border-bottom: none;
+    padding: 15px 20px;
+}
+
+    .card-header-edit h3 {
+        color: white !important;
+        border-bottom: none !important;
+        margin-bottom: 0 !important;
+    }
+
+.table tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.btn-warning {
+    background-color: var(--edit-color) !important;
+    border-color: var(--edit-color) !important;
+    color: white !important;
+}
+
+    .btn-warning:hover {
+        background-color: #e67e22 !important;
+        border-color: #e67e22 !important;
+        color: white !important;
+    }
