@@ -1,8 +1,13 @@
 ﻿@model MVCVeterinaria.ViewModels.TurnoSearchViewModel
+@using System.Globalization
 @using System.Linq
 
-<h1>Reservar Turno</h1>
+@{
+    ViewData["Title"] = "Reservar Turno";
+    var culturaArg = new CultureInfo("es-AR");
+}
 
+<h1>Reservar Turno</h1>
 <hr />
 
 <h4>Buscar Disponibilidad</h4>
@@ -85,7 +90,10 @@ else if (Model.TurnosDisponibles != null && Model.TurnosDisponibles.Any())
                 @foreach (var grupoDia in disponibilidadAgrupadaPorDia)
                 {
                     <tr>
-                        <td>@grupoDia.Key.ToShortDateString() (@grupoDia.Key.DayOfWeek)</td>
+                        <td class="fw-bold align-middle">
+                            @grupoDia.Key.ToString("d/M/yyyy") <br>
+                            <small>(@grupoDia.Key.ToString("dddd", culturaArg))</small>
+                        </td>
 
                         @foreach (var vetHeader in encabezadosVeterinarios)
                         {
@@ -94,27 +102,30 @@ else if (Model.TurnosDisponibles != null && Model.TurnosDisponibles.Any())
                                     .Where(t => t.VeterinarioId == vetHeader.VeterinarioId)
                                     .OrderBy(t => t.InicioSlot.TimeOfDay)
                                     .ToList();
-                            
 
-                            <td class="text-center">
+
+                            <td class="text-center align-top">
                                 @if (slotsDisponibles.Any())
                                 {
-                                    @foreach (var slot in slotsDisponibles)
-                                    {
-                                        <button type="button" 
-                                                class="btn btn-sm btn-outline-success m-1 reserve-button" 
-                                                disabled="disabled"
-                                                data-mascota-id="@Model.MascotaId"
-                                                data-veterinario-id="@slot.VeterinarioId"
-                                                data-fechahorario="@slot.InicioSlot.ToString("o")"
-                                                onclick="submitReservation(this)">
-                                            @slot.InicioSlot.ToShortTimeString()
-                                        </button>
-                                    }
+                                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px;">
+                                        @foreach (var slot in slotsDisponibles)
+                                        {
+                                            <button type="button"
+                                                    class="btn btn-sm btn-outline-success reserve-button"
+                                                    style="width: 100%;"
+                                                    disabled="disabled"
+                                                    data-mascota-id="@Model.MascotaId"
+                                                    data-veterinario-id="@slot.VeterinarioId"
+                                                    data-fechahorario="@slot.InicioSlot.ToString("o")"
+                                                    onclick="submitReservation(this)">
+                                                @slot.InicioSlot.ToString("HH:mm")
+                                            </button>
+                                        }
+                                    </div>
                                 }
                                 else
                                 {
-                                    <span class="text-muted small">N/A</span>
+                                    <span class="text-muted small">Sin turnos</span>
                                 }
                             </td>
                         }
